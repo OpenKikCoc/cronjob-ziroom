@@ -1,4 +1,4 @@
-import os
+import os, re
 import requests
 from bs4 import BeautifulSoup
 
@@ -15,5 +15,5 @@ def query(uri, keyword):
 res, houses = query(os.environ.get('URI'), os.environ.get('KEYWORD'))
 if res.status_code == 200:
     fout = open('data.html', 'w')
-    fout.write("%s" % houses)
+    fout.write(re.sub(r'\?query_session_id=(\d+)', '', "%s" %  houses))
     fout.close()
