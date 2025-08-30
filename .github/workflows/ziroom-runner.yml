@@ -1,0 +1,61 @@
+name: Ziroom Monitor
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 12 * * *"  # Daily at 12:00 PM
+
+jobs:
+  RunZiroomMonitor:
+    name: MonitorZiroomData
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      
+      - name: Setup Python3 environment
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      
+      - name: Install dependencies
+        run: pip3 install -r ./core/requirements.txt
+      
+      - name: Fetch ziroom data
+        env:
+          URI: ${{ vars.URI }}
+          KEYWORD: ${{ vars.KEYWORD }}
+        run: bash ./modules/ziroom/cronjob.sh
+      
+      - name: Commit files 
+        id: commit-files
+        run: |
+          if [ -n "$(git status --porcelain modules/ziroom/data.html)" ]; then
+            git config --local user.email "github-actions[bot]@users.noreply.github.com"
+            git config --local user.name "github-actions[bot]"
+            git add modules/ziroom/data.html
+            git commit -m "action: update ziroom data"
+            echo "hasChange=true" >> $GITHUB_OUTPUT
+          else
+            echo "No changes detected in ziroom data"
+          fi
+      
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        if: ${{ steps.commit-files.outputs.hasChange == 'true' }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
+      
+      - name: Send mail
+        uses: dawidd6/action-send-mail@master
+        if: ${{ steps.commit-files.outputs.hasChange == 'true' }}
+        with:
+          server_address: smtp.qq.com
+          server_port: 465
+          username: ${{ secrets.QQEMAIL_USERNAME }}
+          password: ${{ secrets.QQEMAIL_TOKEN }}
+          subject: 'OpenKikCoc: cronjob-ziroom'
+          html_body: file://modules/ziroom/data.html
+          to: ${{ secrets.QQEMAIL_USERNAME }}
+          from: GitHub Actions
