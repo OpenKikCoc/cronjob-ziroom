@@ -1,8 +1,69 @@
 {
-  "timestamp": "2025-08-30T00:57:45.435217",
+  "timestamp": "2025-08-30T08:20:49.987493",
   "url": "https://hd.99.com/jz/qxhd/",
   "api_url": "https://hd.99.com/jz/qxhd/?r=/Index/loadPageData",
-  "data": [],
+  "data": [
+    {
+      "number": "1",
+      "fwq": "上海一区",
+      "player": "璃梦染琉年",
+      "hkzs": "15121"
+    },
+    {
+      "number": "2",
+      "fwq": "福建一区",
+      "player": "Scirocco",
+      "hkzs": "10099"
+    },
+    {
+      "number": "3",
+      "fwq": "铁翼苍穹",
+      "player": "玄鸟生商",
+      "hkzs": "7076"
+    },
+    {
+      "number": "4",
+      "fwq": "福建一区",
+      "player": "七杀星27A7N0703",
+      "hkzs": "6794"
+    },
+    {
+      "number": "5",
+      "fwq": "双翼之矢",
+      "player": "ψ神威ξ修罗ψ",
+      "hkzs": "6453"
+    },
+    {
+      "number": "6",
+      "fwq": "破晓之剑",
+      "player": "夜闯寡妇村",
+      "hkzs": "5558"
+    },
+    {
+      "number": "7",
+      "fwq": "无尽星海",
+      "player": "白鹿",
+      "hkzs": "5132"
+    },
+    {
+      "number": "8",
+      "fwq": "星穹战铠",
+      "player": "幻星·李平安",
+      "hkzs": "3818"
+    },
+    {
+      "number": "9",
+      "fwq": "四川一区",
+      "player": "杉杉来了",
+      "hkzs": "2671"
+    },
+    {
+      "number": "10",
+      "fwq": "破晓之剑",
+      "player": "叶海亚",
+      "hkzs": "2645"
+    }
+  ],
   "total_records": 10,
   "method": "api_call"
 }
