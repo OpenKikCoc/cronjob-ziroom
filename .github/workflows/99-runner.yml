@@ -1,44 +1,49 @@
-name: CronJob
+name: 99.com Data Scraper
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 12 * * *"
+    - cron: "*/30 * * * *"  # Every 30 minutes
 
 jobs:
-  RunCronJob:
-    name: CheckAndPush
+  Run99Scraper:
+    name: Scrape99Data
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
+      
       - name: Setup Python3 environment
         uses: actions/setup-python@v4
         with:
           python-version: '3.10'
-      - name: Fetch latest data
-        env:
-          URI: ${{ vars.URI }}
-          KEYWORD: ${{ vars.KEYWORD }}
-        run: bash ./cronjob.sh
+      
+      - name: Install dependencies
+        run: pip3 install -r ./core/requirements.txt
+      
+      - name: Fetch 99.com data
+        run: bash ./modules/99/cronjob.sh
+      
       - name: Commit files 
         id: commit-files
         run: |
-          if [ -n "$(git status --porcelain data.html)" ]; then
+          if [ -n "$(git status --porcelain modules/99/data.json modules/99/data.html)" ]; then
             git config --local user.email "github-actions[bot]@users.noreply.github.com"
             git config --local user.name "github-actions[bot]"
-            git add data.html
-            git commit -m "action: update data"
+            git add modules/99/data.json modules/99/data.html
+            git commit -m "action: update 99.com data"
             echo "hasChange=true" >> $GITHUB_OUTPUT
           else
-            echo "No changes detected"
+            echo "No changes detected in 99.com data"
           fi
+      
       - name: Push changes
         uses: ad-m/github-push-action@master
         if: ${{ steps.commit-files.outputs.hasChange == 'true' }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.ref }}
+      
       - name: Send mail
         uses: dawidd6/action-send-mail@master
         if: ${{ steps.commit-files.outputs.hasChange == 'true' }}
@@ -47,7 +52,7 @@ jobs:
           server_port: 465
           username: ${{ secrets.QQEMAIL_USERNAME }}
           password: ${{ secrets.QQEMAIL_TOKEN }}
-          subject: 'OpenKikCoc: cronjob-ziroom'
-          html_body: file://data.html
-          to: ${{ secrets.QQEMAIL_USERNAME }}
+          subject: '99.com Data Update Notification'
+          html_body: file://modules/99/data.html
+          to: ${{ secrets.QQEMAIL_RECIPIENTS }}
           from: GitHub Actions
