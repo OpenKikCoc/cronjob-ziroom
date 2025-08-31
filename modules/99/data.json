@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-31T22:18:49.792281",
+  "timestamp": "2025-08-31T23:24:15.273718",
   "url": "https://hd.99.com/jz/qxhd/",
   "api_url": "https://hd.99.com/jz/qxhd/?r=/Index/loadPageData",
   "data": [
@@ -13,7 +13,7 @@
       "number": "2",
       "fwq": "福建一区",
       "player": "Scirocco",
-      "hkzs": "52046"
+      "hkzs": "83969"
     },
     {
       "number": "3",
@@ -23,45 +23,45 @@
     },
     {
       "number": "4",
-      "fwq": "破晓之剑",
-      "player": "夜闯寡妇村",
-      "hkzs": "21507"
+      "fwq": "无尽星海",
+      "player": "白鹿",
+      "hkzs": "22930"
     },
     {
       "number": "5",
-      "fwq": "无尽星海",
-      "player": "白鹿",
-      "hkzs": "19834"
+      "fwq": "破晓之剑",
+      "player": "夜闯寡妇村",
+      "hkzs": "22101"
     },
     {
       "number": "6",
       "fwq": "东北一区",
       "player": "九重天",
-      "hkzs": "16786"
+      "hkzs": "16791"
     },
     {
       "number": "7",
+      "fwq": "四川一区",
+      "player": "杉杉来了",
+      "hkzs": "15101"
+    },
+    {
+      "number": "8",
       "fwq": "双翼之矢",
       "player": "ψ神威ξ修罗ψ",
       "hkzs": "14620"
     },
     {
-      "number": "8",
+      "number": "9",
       "fwq": "寅虎展翼",
       "player": "〃烟雨·半夏",
       "hkzs": "12927"
     },
     {
-      "number": "9",
+      "number": "10",
       "fwq": "寅虎展翼",
       "player": "〆须弥·栖梧",
       "hkzs": "12201"
-    },
-    {
-      "number": "10",
-      "fwq": "铁翼苍穹",
-      "player": "玄鸟生商",
-      "hkzs": "7545"
     }
   ],
   "total_records": 10,
