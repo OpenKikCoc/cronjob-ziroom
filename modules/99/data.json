@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-31T04:20:13.433708",
+  "timestamp": "2025-08-31T05:15:52.223607",
   "url": "https://hd.99.com/jz/qxhd/",
   "api_url": "https://hd.99.com/jz/qxhd/?r=/Index/loadPageData",
   "data": [
@@ -19,7 +19,7 @@
       "number": "3",
       "fwq": "福建一区",
       "player": "Scirocco",
-      "hkzs": "12313"
+      "hkzs": "12335"
     },
     {
       "number": "4",
@@ -59,9 +59,9 @@
     },
     {
       "number": "10",
-      "fwq": "破晓之剑",
-      "player": "叶海亚",
-      "hkzs": "3020"
+      "fwq": "浙江一区",
+      "player": "__秋水伊人ゞ",
+      "hkzs": "3022"
     }
   ],
   "total_records": 10,
