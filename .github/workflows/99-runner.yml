@@ -2,7 +2,7 @@ name: 99.com Data Scraper
 on:
   workflow_dispatch:
   schedule:
-    - cron: "*/2 * * * *"  # Every 10 minutes
+    - cron: "*/30 * * * *"  # Every 1 minute
 
 jobs:
   Run99Scraper:
