@@ -1,0 +1,908 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <title>RentMiro 公寓监控</title>
+        <style>
+            body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; margin: 20px; color: #333; }
+            .container { max-width: 1200px; margin: 0 auto; }
+            .header { background: #2c3e50; color: white; padding: 20px; border-radius: 8px 8px 0 0; }
+            .header a { color: white; text-decoration: none; }
+            .header a:hover { text-decoration: underline; }
+            .summary { background: #ecf0f1; padding: 15px; margin-bottom: 20px; border-radius: 0 0 8px 8px; }
+            .changes { background: #fff3cd; padding: 15px; border-left: 5px solid #ffc107; margin-bottom: 20px; border-radius: 4px; }
+            .changes pre { white-space: pre-wrap; margin: 0; font-family: inherit; }
+            
+            /* Controls */
+            .controls { margin: 20px 0; padding: 15px; background: #f8f9fa; border-radius: 8px; display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
+            .control-group { display: flex; align-items: center; gap: 10px; margin-right: 20px; }
+            select, input { padding: 8px; border: 1px solid #ddd; border-radius: 4px; }
+            
+            table { width: 100%; border-collapse: collapse; margin-top: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+            th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #ddd; vertical-align: middle; }
+            th { background-color: #f8f9fa; font-weight: 600; color: #2c3e50; position: sticky; top: 0; }
+            tr:hover { background-color: #f5f5f5; }
+            
+            .price { font-weight: bold; }
+            .price-up { color: #e74c3c; }
+            .price-down { color: #27ae60; }
+            .price-same { color: #2c3e50; }
+            
+            .unit-badge { background: #3498db; color: white; padding: 4px 8px; border-radius: 4px; font-weight: bold; display: inline-block; }
+            .new-badge { background: #2ecc71; color: white; padding: 2px 6px; border-radius: 4px; font-size: 0.8em; margin-left: 5px; }
+            
+            .floor-plan-img { width: 100px; height: auto; border-radius: 4px; cursor: pointer; transition: transform 0.2s; }
+            .floor-plan-img:hover { transform: scale(2.5); z-index: 100; position: relative; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+            
+            .footer { margin-top: 30px; text-align: center; color: #7f8c8d; font-size: 0.9em; }
+        </style>
+        <script>
+            function filterTable() {
+                // Get selected beds
+                const bedCheckboxes = document.querySelectorAll('input[name="bedFilter"]:checked');
+                const selectedBeds = Array.from(bedCheckboxes).map(cb => cb.value);
+                
+                const priceFilter = document.getElementById('priceFilter').value;
+                const dateFilter = document.getElementById('dateFilter').value;
+                const rows = document.querySelectorAll('tbody tr');
+                
+                rows.forEach(row => {
+                    const beds = row.getAttribute('data-beds');
+                    const price = parseInt(row.getAttribute('data-price'));
+                    const availableDate = row.getAttribute('data-available');
+                    
+                    let show = true;
+                    
+                    // Bed filter (if any selected)
+                    if (selectedBeds.length > 0 && !selectedBeds.includes(beds)) {
+                        show = false;
+                    }
+                    
+                    // Price filter
+                    if (priceFilter && price > parseInt(priceFilter)) {
+                        show = false;
+                    }
+                    
+                    // Date filter (Move-in date)
+                    // Logic: If I want to move in on X, the unit must be available on or before X.
+                    if (dateFilter) {
+                        if (availableDate > dateFilter) {
+                            show = false;
+                        }
+                    }
+                    
+                    row.style.display = show ? '' : 'none';
+                });
+                
+                // Update count
+                const visibleCount = Array.from(rows).filter(r => r.style.display !== 'none').length;
+                document.getElementById('visibleCount').textContent = visibleCount;
+            }
+            
+            // Set default date to today
+            window.onload = function() {
+                const today = new Date().toISOString().split('T')[0];
+                document.getElementById('dateFilter').value = today;
+                filterTable();
+            }
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <h1 style="margin:0"><a href="https://www.rentmiro.com/floorplans" target="_blank" style="color:white; text-decoration:none;">RentMiro 公寓监控 🔗</a></h1>
+                    <a href="../../index.html" style="color:white; text-decoration:none; background:rgba(255,255,255,0.2); padding:5px 10px; border-radius:4px; font-size:0.9em;">🏠 返回首页</a>
+                </div>
+                <p style="margin:10px 0 0 0; opacity: 0.8">更新时间: 2026-02-28T06:25:05.754920</p>
+            </div>
+            
+            <div class="summary">
+                <strong>当前可用房源:</strong> 42 套
+            </div>
+            
+            
+            
+            <div class="controls">
+                <div class="control-group">
+                    <label>户型筛选:</label>
+                    <div style="display: flex; gap: 10px; background: white; padding: 5px 10px; border: 1px solid #ddd; border-radius: 4px;">
+                        <label><input type="checkbox" name="bedFilter" value="0" onchange="filterTable()"> Studio</label>
+                        <label><input type="checkbox" name="bedFilter" value="1" onchange="filterTable()"> 1B</label>
+                        <label><input type="checkbox" name="bedFilter" value="2" onchange="filterTable()"> 2B</label>
+                        <label><input type="checkbox" name="bedFilter" value="3" onchange="filterTable()"> 3B</label>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label>最高价格:</label>
+                    <input type="number" id="priceFilter" placeholder="输入最高预算" onkeyup="filterTable()" style="width: 100px;">
+                </div>
+                <div class="control-group">
+                    <label>期望入住日期:</label>
+                    <input type="date" id="dateFilter" onchange="filterTable()">
+                </div>
+                <div class="control-group" style="margin-left: auto; color: #666;">
+                    显示: <span id="visibleCount">42</span> / 42
+                </div>
+            </div>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>房间号</th>
+                        <th>户型</th>
+                        <th>户型图</th>
+                        <th>面积 (sq.ft)</th>
+                        <th>价格</th>
+                        <th>可用时间</th>
+                    </tr>
+                </thead>
+                <tbody>
+    
+                    <tr data-beds="0" data-price="3252" data-available="2026-03-26">
+                        <td>
+                            <span class="unit-badge">HOME E404</span>
+                            
+                        </td>
+                        <td>
+                            <strong>S5</strong><br>
+                            <span style="color:#666; font-size:0.9em">0B1B</span>
+                        </td>
+                        <td><img src="https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/83/22/83221440cbe4d1108125407ffe905aba.jpg" class="floor-plan-img" loading="lazy" alt="Floor Plan"></td>
+                        <td>689</td>
+                        <td class="price-same">
+                            $3,252.00
+                            
+                        </td>
+                        <td>2026-03-26</td>
+                    </tr>
+        
+                    <tr data-beds="1" data-price="3354" data-available="2026-02-28">
+                        <td>
+                            <span class="unit-badge">HOME E2011</span>
+                            
+                        </td>
+                        <td>
+                            <strong>A1</strong><br>
+                            <span style="color:#666; font-size:0.9em">1B1B</span>
+                        </td>
+                        <td><img src="https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/20/9d/209d2f3c4dd4ed1bbd55ab6a37ca814b.jpg" class="floor-plan-img" loading="lazy" alt="Floor Plan"></td>
+                        <td>605</td>
+                        <td class="price-same">
+                            $3,354.00
+                            
+                        </td>
+                        <td>2026-02-28</td>
+                    </tr>
+        
+                    <tr data-beds="0" data-price="3432" data-available="2026-03-23">
+                        <td>
+                            <span class="unit-badge">HOME E1312</span>
+                            
+                        </td>
+                        <td>
+                            <strong>S5</strong><br>
+                            <span style="color:#666; font-size:0.9em">0B1B</span>
+                        </td>
+                        <td><img src="https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/83/22/83221440cbe4d1108125407ffe905aba.jpg" class="floor-plan-img" loading="lazy" alt="Floor Plan"></td>
+                        <td>615</td>
+                        <td class="price-same">
+                            $3,432.00
+                            
+                        </td>
+                        <td>2026-03-23</td>
+                    </tr>
+        
+                    <tr data-beds="0" data-price="3442" data-available="2026-03-23">
+                        <td>
+                            <span class="unit-badge">HOME W1204</span>
+                            
+                        </td>
+                        <td>
+                            <strong>S5</strong><br>
+                            <span style="color:#666; font-size:0.9em">0B1B</span>
+                        </td>
+                        <td><img src="https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/83/22/83221440cbe4d1108125407ffe905aba.jpg" class="floor-plan-img" loading="lazy" alt="Floor Plan"></td>
+                        <td>638</td>
+                        <td class="price-same">
+                            $3,442.00
+                            
+                        </td>
+                        <td>2026-03-23</td>
+                    </tr>
+        
+                    <tr data-beds="0" data-price="3452" data-available="2026-04-01">
+                        <td>
+                            <span class="unit-badge">HOME W1304</span>
+                            
+                        </td>
+                        <td>
+                            <strong>S5</strong><br>
+                            <span style="color:#666; font-size:0.9em">0B1B</span>
+                        </td>
+                        <td><img src="https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/83/22/83221440cbe4d1108125407ffe905aba.jpg" class="floor-plan-img" loading="lazy" alt="Floor Plan"></td>
+                        <td>648</td>
+                        <td class="price-same">
+                            $3,452.00
+                            
+                        </td>
+                        <td>2026-04-01</td>
+                    </tr>
+        
+                    <tr data-beds="0" data-price="3474" data-available="2026-02-28">
+                        <td>
+                            <span class="unit-badge">HOME W1904</span>
+                            
+                        </td>
+                        <td>
+                            <strong>S5</strong><br>
+                            <span style="color:#666; font-size:0.9em">0B1B</span>
+                        </td>
+                        <td><img src="https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/83/22/83221440cbe4d1108125407ffe905aba.jpg" class="floor-plan-img" loading="lazy" alt="Floor Plan"></td>
+                        <td>648</td>
+                        <td class="price-same">
+                            $3,474.00
+                            
+                        </td>
+                        <td>2026-02-28</td>
+                    </tr>
+        
+                    <tr data-beds="0" data-price="3592" data-available="2026-03-17">
+                        <td>
+                            <span class="unit-badge">HOME E1904</span>
+                            
+                        </td>
+                        <td>
+                            <strong>S5</strong><br>
+                            <span style="color:#666; font-size:0.9em">0B1B</span>
+                        </td>
+                        <td><img src="https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/83/22/83221440cbe4d1108125407ffe905aba.jpg" class="floor-plan-img" loading="lazy" alt="Floor Plan"></td>
+                        <td>681</td>
+                        <td class="price-same">
+                            $3,592.00
+                            
+                        </td>
+                        <td>2026-03-17</td>
+                    </tr>
+        
+                    <tr data-beds="1" data-price="3600" data-available="2026-02-28">
+                        <td>
+                            <span class="unit-badge">HOME W1012</span>
+                            
+                        </td>
+                        <td>
+                            <strong>A4</strong><br>
+                            <span style="color:#666; font-size:0.9em">1B1B</span>
+                        </td>
+                        <td><img src="https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/68/3f/683fb96a7f8638a61f6ac1562767fc51.jpg" class="floor-plan-img" loading="lazy" alt="Floor Plan"></td>
+                        <td>746</td>
+                        <td class="price-same">
+                            $3,600.00
+                            
+                        </td>
+                        <td>2026-02-28</td>
+                    </tr>
+        
+                    <tr data-beds="0" data-price="3617" data-available="2026-03-15">
+                        <td>
+                            <span class="unit-badge">HOME E2004</span>
+                            
+                        </td>
+                        <td>
+                            <strong>S5</strong><br>
+                            <span style="color:#666; font-size:0.9em">0B1B</span>
+                        </td>
+                        <td><img src="https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/83/22/83221440cbe4d1108125407ffe905aba.jpg" class="floor-plan-img" loading="lazy" alt="Floor Plan"></td>
+                        <td>692</td>
+                        <td class="price-same">
+                            $3,617.00
+                            
+                        </td>
+                        <td>2026-03-15</td>
+                    </tr>
+        
+                    <tr data-beds="1" data-price="3629" data-available="2026-04-07">
+                        <td>
+                            <span class="unit-badge">HOME W503</span>
+                            
+                        </td>
+                        <td>
+                            <strong>A6</strong><br>
+                            <span style="color:#666; font-size:0.9em">1B1B</span>
+                        </td>
+                        <td><img src="https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/1b/74/1b7460da18d92de9b7070de0848b283a.jpg" class="floor-plan-img" loading="lazy" alt="Floor Plan"></td>
+                        <td>779</td>
+                        <td class="price-same">
+                            $3,629.00
+                            
+                        </td>
+                        <td>2026-04-07</td>
+                    </tr>
+        
+                    <tr data-beds="1" data-price="3639" data-available="2026-03-15">
+                        <td>
+                            <span class="unit-badge">HOME W906</span>
+                            
+                        </td>
+                        <td>
+                            <strong>A9</strong><br>
+                            <span style="color:#666; font-size:0.9em">1B1B</span>
+                        </td>
+                        <td><img src="https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/40/fc/40fcfbc589292b298eb1044a5b8e4bb2.jpg" class="floor-plan-img" loading="lazy" alt="Floor Plan"></td>
+                        <td>791</td>
+                        <td class="price-same">
+                            $3,639.00
+                            
+                        </td>
+                        <td>2026-03-15</td>
+                    </tr>
+        
+                    <tr data-beds="1" data-price="3674" data-available="2026-02-28">
+                        <td>
+                            <span class="unit-badge">HOME W1003</span>
+                            
+                        </td>
+                        <td>
+                            <strong>A6</strong><br>
+                            <span style="color:#666; font-size:0.9em">1B1B</span>
+                        </td>
+                        <td><img src="https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/1b/74/1b7460da18d92de9b7070de0848b283a.jpg" class="floor-plan-img" loading="lazy" alt="Floor Plan"></td>
+                        <td>761</td>
+                        <td class="price-same">
+                            $3,674.00
+                            
+                        </td>
+                        <td>2026-02-28</td>
+                    </tr>
+        
+                    <tr data-beds="0" data-price="3695" data-available="2026-02-28">
+                        <td>
+                            <span class="unit-badge">HOME W508</span>
+                            
+                        </td>
+                        <td>
+                            <strong>S1</strong><br>
+                            <span style="color:#666; font-size:0.9em">0B1B</span>
+                        </td>
+                        <td><img src="https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/b1/3c/b13cb1df56bee58dd0fd598f8b8a3404.jpg" class="floor-plan-img" loading="lazy" alt="Floor Plan"></td>
+                        <td>568</td>
+                        <td class="price-same">
+                            $3,695.00
+                            
+                        </td>
+                        <td>2026-02-28</td>
+                    </tr>
+        
+                    <tr data-beds="1" data-price="3734" data-available="2026-02-28">
+                        <td>
+                            <span class="unit-badge">HOME W801</span>
+                            
+                        </td>
+                        <td>
+                            <strong>A10</strong><br>
+                            <span style="color:#666; font-size:0.9em">1B1B</span>
+                        </td>
+                        <td><img src="https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/13/b3/13b373f52d2350dece81457350fb1a34.jpg" class="floor-plan-img" loading="lazy" alt="Floor Plan"></td>
+                        <td>825</td>
+                        <td class="price-same">
+                            $3,734.00
+                            
+                        </td>
+                        <td>2026-02-28</td>
+                    </tr>
+        
+                    <tr data-beds="1" data-price="3784" data-available="2026-04-15">
+                        <td>
+                            <span class="unit-badge">HOME W1306</span>
+                            
+                        </td>
+                        <td>
+                            <strong>A9</strong><br>
+                            <span style="color:#666; font-size:0.9em">1B1B</span>
+                        </td>
+                        <td><img src="https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/40/fc/40fcfbc589292b298eb1044a5b8e4bb2.jpg" class="floor-plan-img" loading="lazy" alt="Floor Plan"></td>
+                        <td>791</td>
+                        <td class="price-same">
+                            $3,784.00
+                            
+                        </td>
+                        <td>2026-04-15</td>
+                    </tr>
+        
+                    <tr data-beds="1" data-price="3854" data-available="2026-03-26">
+                        <td>
+                            <span class="unit-badge">HOME E1906</span>
+                            
+                        </td>
+                        <td>
+                            <strong>A14</strong><br>
+                            <span style="color:#666; font-size:0.9em">1B1B</span>
+                        </td>
+                        <td><img src="https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/33/97/33971b73a51d803da7f9ea49ed41984f.jpg" class="floor-plan-img" loading="lazy" alt="Floor Plan"></td>
+                        <td>851</td>
+                        <td class="price-same">
+                            $3,854.00
+                            
+                        </td>
+                        <td>2026-03-26</td>
+                    </tr>
+        
+                    <tr data-beds="1" data-price="3859" data-available="2026-04-26">
+                        <td>
+                            <span class="unit-badge">HOME W1001</span>
+                            
+                        </td>
+                        <td>
+                            <strong>A10</strong><br>
+                            <span style="color:#666; font-size:0.9em">1B1B</span>
+                        </td>
+                        <td><img src="https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/13/b3/13b373f52d2350dece81457350fb1a34.jpg" class="floor-plan-img" loading="lazy" alt="Floor Plan"></td>
+                        <td>825</td>
+                        <td class="price-same">
+                            $3,859.00
+                            
+                        </td>
+                        <td>2026-04-26</td>
+                    </tr>
+        
+                    <tr data-beds="1" data-price="3881" data-available="2026-02-28">
+                        <td>
+                            <span class="unit-badge">HOME W415</span>
+                            
+                        </td>
+                        <td>
+                            <strong>A18 + Den</strong><br>
+                            <span style="color:#666; font-size:0.9em">1B1B</span>
+                        </td>
+                        <td><img src="https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/2c/ed/2ceda3fe1a14e3fbe9e365a836502db7.jpg" class="floor-plan-img" loading="lazy" alt="Floor Plan"></td>
+                        <td>894</td>
+                        <td class="price-same">
+                            $3,881.00
+                            
+                        </td>
+                        <td>2026-02-28</td>
+                    </tr>
+        
+                    <tr data-beds="1" data-price="3919" data-available="2026-04-13">
+                        <td>
+                            <span class="unit-badge">HOME W1301</span>
+                            
+                        </td>
+                        <td>
+                            <strong>A10</strong><br>
+                            <span style="color:#666; font-size:0.9em">1B1B</span>
+                        </td>
+                        <td><img src="https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/13/b3/13b373f52d2350dece81457350fb1a34.jpg" class="floor-plan-img" loading="lazy" alt="Floor Plan"></td>
+                        <td>801</td>
+                        <td class="price-same">
+                            $3,919.00
+                            
+                        </td>
+                        <td>2026-04-13</td>
+                    </tr>
+        
+                    <tr data-beds="1" data-price="3994" data-available="2026-02-28">
+                        <td>
+                            <span class="unit-badge">HOME E316</span>
+                            
+                        </td>
+                        <td>
+                            <strong>A17 + Den</strong><br>
+                            <span style="color:#666; font-size:0.9em">1B1B</span>
+                        </td>
+                        <td><img src="https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/0f/5e/0f5e192b0fa5f0ada75705bddbe56db2.jpg" class="floor-plan-img" loading="lazy" alt="Floor Plan"></td>
+                        <td>1002</td>
+                        <td class="price-same">
+                            $3,994.00
+                            
+                        </td>
+                        <td>2026-02-28</td>
+                    </tr>
+        
+                    <tr data-beds="1" data-price="4014" data-available="2026-03-23">
+                        <td>
+                            <span class="unit-badge">HOME E1803</span>
+                            
+                        </td>
+                        <td>
+                            <strong>A5</strong><br>
+                            <span style="color:#666; font-size:0.9em">1B1B</span>
+                        </td>
+                        <td><img src="https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/54/d9/54d9e364fcea2e2de624085b37eef025.jpeg" class="floor-plan-img" loading="lazy" alt="Floor Plan"></td>
+                        <td>816</td>
+                        <td class="price-same">
+                            $4,014.00
+                            
+                        </td>
+                        <td>2026-03-23</td>
+                    </tr>
+        
+                    <tr data-beds="1" data-price="4024" data-available="2026-03-22">
+                        <td>
+                            <span class="unit-badge">HOME E1703</span>
+                            
+                        </td>
+                        <td>
+                            <strong>A5</strong><br>
+                            <span style="color:#666; font-size:0.9em">1B1B</span>
+                        </td>
+                        <td><img src="https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/54/d9/54d9e364fcea2e2de624085b37eef025.jpeg" class="floor-plan-img" loading="lazy" alt="Floor Plan"></td>
+                        <td>747</td>
+                        <td class="price-same">
+                            $4,024.00
+                            
+                        </td>
+                        <td>2026-03-22</td>
+                    </tr>
+        
+                    <tr data-beds="1" data-price="4039" data-available="2026-04-03">
+                        <td>
+                            <span class="unit-badge">HOME E1714</span>
+                            
+                        </td>
+                        <td>
+                            <strong>A5</strong><br>
+                            <span style="color:#666; font-size:0.9em">1B1B</span>
+                        </td>
+                        <td><img src="https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/54/d9/54d9e364fcea2e2de624085b37eef025.jpeg" class="floor-plan-img" loading="lazy" alt="Floor Plan"></td>
+                        <td>743</td>
+                        <td class="price-same">
+                            $4,039.00
+                            
+                        </td>
+                        <td>2026-04-03</td>
+                    </tr>
+        
+                    <tr data-beds="1" data-price="4069" data-available="2026-03-15">
+                        <td>
+                            <span class="unit-badge">HOME E2110</span>
+                            
+                        </td>
+                        <td>
+                            <strong>A12</strong><br>
+                            <span style="color:#666; font-size:0.9em">1B1B</span>
+                        </td>
+                        <td><img src="https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/11/f8/11f89057d186b83a3a19ed178913081d.jpg" class="floor-plan-img" loading="lazy" alt="Floor Plan"></td>
+                        <td>880</td>
+                        <td class="price-same">
+                            $4,069.00
+                            
+                        </td>
+                        <td>2026-03-15</td>
+                    </tr>
+        
+                    <tr data-beds="1" data-price="4089" data-available="2026-04-09">
+                        <td>
+                            <span class="unit-badge">HOME E1914</span>
+                            
+                        </td>
+                        <td>
+                            <strong>A5</strong><br>
+                            <span style="color:#666; font-size:0.9em">1B1B</span>
+                        </td>
+                        <td><img src="https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/54/d9/54d9e364fcea2e2de624085b37eef025.jpeg" class="floor-plan-img" loading="lazy" alt="Floor Plan"></td>
+                        <td>743</td>
+                        <td class="price-same">
+                            $4,089.00
+                            
+                        </td>
+                        <td>2026-04-09</td>
+                    </tr>
+        
+                    <tr data-beds="1" data-price="4094" data-available="2026-04-10">
+                        <td>
+                            <span class="unit-badge">HOME W1901</span>
+                            
+                        </td>
+                        <td>
+                            <strong>A10</strong><br>
+                            <span style="color:#666; font-size:0.9em">1B1B</span>
+                        </td>
+                        <td><img src="https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/13/b3/13b373f52d2350dece81457350fb1a34.jpg" class="floor-plan-img" loading="lazy" alt="Floor Plan"></td>
+                        <td>801</td>
+                        <td class="price-same">
+                            $4,094.00
+                            
+                        </td>
+                        <td>2026-04-10</td>
+                    </tr>
+        
+                    <tr data-beds="1" data-price="4159" data-available="2026-02-28">
+                        <td>
+                            <span class="unit-badge">HOME E816</span>
+                            
+                        </td>
+                        <td>
+                            <strong>A17 + Den</strong><br>
+                            <span style="color:#666; font-size:0.9em">1B1B</span>
+                        </td>
+                        <td><img src="https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/0f/5e/0f5e192b0fa5f0ada75705bddbe56db2.jpg" class="floor-plan-img" loading="lazy" alt="Floor Plan"></td>
+                        <td>890</td>
+                        <td class="price-same">
+                            $4,159.00
+                            
+                        </td>
+                        <td>2026-02-28</td>
+                    </tr>
+        
+                    <tr data-beds="2" data-price="4754" data-available="2026-02-28">
+                        <td>
+                            <span class="unit-badge">HOME W502</span>
+                            
+                        </td>
+                        <td>
+                            <strong>B2</strong><br>
+                            <span style="color:#666; font-size:0.9em">2B2B</span>
+                        </td>
+                        <td><img src="https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/f2/15/f215bd1762cdeac8c86009a2d04273f7.jpg" class="floor-plan-img" loading="lazy" alt="Floor Plan"></td>
+                        <td>1150</td>
+                        <td class="price-same">
+                            $4,754.00
+                            
+                        </td>
+                        <td>2026-02-28</td>
+                    </tr>
+        
+                    <tr data-beds="2" data-price="4905" data-available="2026-02-28">
+                        <td>
+                            <span class="unit-badge">HOME E1007</span>
+                            
+                        </td>
+                        <td>
+                            <strong>B3</strong><br>
+                            <span style="color:#666; font-size:0.9em">2B2B</span>
+                        </td>
+                        <td><img src="https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/6b/42/6b42321bc1feed6134fd7aaad72c85f7.jpg" class="floor-plan-img" loading="lazy" alt="Floor Plan"></td>
+                        <td>1117</td>
+                        <td class="price-same">
+                            $4,905.00
+                            
+                        </td>
+                        <td>2026-02-28</td>
+                    </tr>
+        
+                    <tr data-beds="2" data-price="5118" data-available="2026-02-28">
+                        <td>
+                            <span class="unit-badge">HOME W913</span>
+                            
+                        </td>
+                        <td>
+                            <strong>B8 + Den</strong><br>
+                            <span style="color:#666; font-size:0.9em">2B2B</span>
+                        </td>
+                        <td><img src="https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/a9/5c/a95c6d3b0474c2cc492e82e01df73634.jpg" class="floor-plan-img" loading="lazy" alt="Floor Plan"></td>
+                        <td>1210</td>
+                        <td class="price-same">
+                            $5,118.00
+                            
+                        </td>
+                        <td>2026-02-28</td>
+                    </tr>
+        
+                    <tr data-beds="2" data-price="5291" data-available="2026-02-28">
+                        <td>
+                            <span class="unit-badge">HOME E1115</span>
+                            
+                        </td>
+                        <td>
+                            <strong>B5</strong><br>
+                            <span style="color:#666; font-size:0.9em">2B2B</span>
+                        </td>
+                        <td><img src="https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/bb/61/bb61c51e7b612faff39b6173d63d71f4.jpg" class="floor-plan-img" loading="lazy" alt="Floor Plan"></td>
+                        <td>1181</td>
+                        <td class="price-same">
+                            $5,291.00
+                            
+                        </td>
+                        <td>2026-02-28</td>
+                    </tr>
+        
+                    <tr data-beds="2" data-price="5316" data-available="2026-04-14">
+                        <td>
+                            <span class="unit-badge">HOME W2207</span>
+                            
+                        </td>
+                        <td>
+                            <strong>B1</strong><br>
+                            <span style="color:#666; font-size:0.9em">2B2B</span>
+                        </td>
+                        <td><img src="https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/ad/f3/adf3e609a7cb3d86d67aaa6318aeaf29.jpg" class="floor-plan-img" loading="lazy" alt="Floor Plan"></td>
+                        <td>1074</td>
+                        <td class="price-same">
+                            $5,316.00
+                            
+                        </td>
+                        <td>2026-04-14</td>
+                    </tr>
+        
+                    <tr data-beds="2" data-price="5321" data-available="2026-02-28">
+                        <td>
+                            <span class="unit-badge">HOME E902</span>
+                            
+                        </td>
+                        <td>
+                            <strong>B4</strong><br>
+                            <span style="color:#666; font-size:0.9em">2B2B</span>
+                        </td>
+                        <td><img src="https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/ea/eb/eaeb8137c2e891a6765ce9cd2239f935.jpg" class="floor-plan-img" loading="lazy" alt="Floor Plan"></td>
+                        <td>1122</td>
+                        <td class="price-same">
+                            $5,321.00
+                            
+                        </td>
+                        <td>2026-02-28</td>
+                    </tr>
+        
+                    <tr data-beds="2" data-price="5366" data-available="2026-02-28">
+                        <td>
+                            <span class="unit-badge">HOME W2307</span>
+                            
+                        </td>
+                        <td>
+                            <strong>B1</strong><br>
+                            <span style="color:#666; font-size:0.9em">2B2B</span>
+                        </td>
+                        <td><img src="https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/ad/f3/adf3e609a7cb3d86d67aaa6318aeaf29.jpg" class="floor-plan-img" loading="lazy" alt="Floor Plan"></td>
+                        <td>1076</td>
+                        <td class="price-same">
+                            $5,366.00
+                            
+                        </td>
+                        <td>2026-02-28</td>
+                    </tr>
+        
+                    <tr data-beds="2" data-price="5408" data-available="2026-02-28">
+                        <td>
+                            <span class="unit-badge">HOME W1813</span>
+                            
+                        </td>
+                        <td>
+                            <strong>B8 + Den</strong><br>
+                            <span style="color:#666; font-size:0.9em">2B2B</span>
+                        </td>
+                        <td><img src="https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/a9/5c/a95c6d3b0474c2cc492e82e01df73634.jpg" class="floor-plan-img" loading="lazy" alt="Floor Plan"></td>
+                        <td>1227</td>
+                        <td class="price-same">
+                            $5,408.00
+                            
+                        </td>
+                        <td>2026-02-28</td>
+                    </tr>
+        
+                    <tr data-beds="2" data-price="5416" data-available="2026-02-28">
+                        <td>
+                            <span class="unit-badge">HOME W2407</span>
+                            
+                        </td>
+                        <td>
+                            <strong>B1</strong><br>
+                            <span style="color:#666; font-size:0.9em">2B2B</span>
+                        </td>
+                        <td><img src="https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/ad/f3/adf3e609a7cb3d86d67aaa6318aeaf29.jpg" class="floor-plan-img" loading="lazy" alt="Floor Plan"></td>
+                        <td>1074</td>
+                        <td class="price-same">
+                            $5,416.00
+                            
+                        </td>
+                        <td>2026-02-28</td>
+                    </tr>
+        
+                    <tr data-beds="2" data-price="5481" data-available="2026-02-28">
+                        <td>
+                            <span class="unit-badge">HOME E1307</span>
+                            
+                        </td>
+                        <td>
+                            <strong>B3</strong><br>
+                            <span style="color:#666; font-size:0.9em">2B2B</span>
+                        </td>
+                        <td><img src="https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/6b/42/6b42321bc1feed6134fd7aaad72c85f7.jpg" class="floor-plan-img" loading="lazy" alt="Floor Plan"></td>
+                        <td>1120</td>
+                        <td class="price-same">
+                            $5,481.00
+                            
+                        </td>
+                        <td>2026-02-28</td>
+                    </tr>
+        
+                    <tr data-beds="2" data-price="5481" data-available="2026-04-02">
+                        <td>
+                            <span class="unit-badge">HOME W1702</span>
+                            
+                        </td>
+                        <td>
+                            <strong>B2</strong><br>
+                            <span style="color:#666; font-size:0.9em">2B2B</span>
+                        </td>
+                        <td><img src="https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/f2/15/f215bd1762cdeac8c86009a2d04273f7.jpg" class="floor-plan-img" loading="lazy" alt="Floor Plan"></td>
+                        <td>1114</td>
+                        <td class="price-same">
+                            $5,481.00
+                            
+                        </td>
+                        <td>2026-04-02</td>
+                    </tr>
+        
+                    <tr data-beds="2" data-price="5571" data-available="2026-05-04">
+                        <td>
+                            <span class="unit-badge">HOME W2002</span>
+                            
+                        </td>
+                        <td>
+                            <strong>B2</strong><br>
+                            <span style="color:#666; font-size:0.9em">2B2B</span>
+                        </td>
+                        <td><img src="https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/f2/15/f215bd1762cdeac8c86009a2d04273f7.jpg" class="floor-plan-img" loading="lazy" alt="Floor Plan"></td>
+                        <td>1067</td>
+                        <td class="price-same">
+                            $5,571.00
+                            
+                        </td>
+                        <td>2026-05-04</td>
+                    </tr>
+        
+                    <tr data-beds="2" data-price="5623" data-available="2026-02-28">
+                        <td>
+                            <span class="unit-badge">HOME W2313</span>
+                            
+                        </td>
+                        <td>
+                            <strong>B8 + Den</strong><br>
+                            <span style="color:#666; font-size:0.9em">2B2B</span>
+                        </td>
+                        <td><img src="https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/a9/5c/a95c6d3b0474c2cc492e82e01df73634.jpg" class="floor-plan-img" loading="lazy" alt="Floor Plan"></td>
+                        <td>1217</td>
+                        <td class="price-same">
+                            $5,623.00
+                            
+                        </td>
+                        <td>2026-02-28</td>
+                    </tr>
+        
+                    <tr data-beds="2" data-price="5788" data-available="2026-05-06">
+                        <td>
+                            <span class="unit-badge">HOME E2401</span>
+                            
+                        </td>
+                        <td>
+                            <strong>B14 + Den</strong><br>
+                            <span style="color:#666; font-size:0.9em">2B2B</span>
+                        </td>
+                        <td><img src="https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/1c/21/1c21d36b91f05a0e1fc18b40e763a833.jpg" class="floor-plan-img" loading="lazy" alt="Floor Plan"></td>
+                        <td>1433</td>
+                        <td class="price-same">
+                            $5,788.00
+                            
+                        </td>
+                        <td>2026-05-06</td>
+                    </tr>
+        
+                    <tr data-beds="2" data-price="5788" data-available="2026-04-27">
+                        <td>
+                            <span class="unit-badge">HOME W2315</span>
+                            
+                        </td>
+                        <td>
+                            <strong>B12 + Den</strong><br>
+                            <span style="color:#666; font-size:0.9em">2B2B</span>
+                        </td>
+                        <td><img src="https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/c3/87/c387996b971cc1a6a20c13f9127429f5.png" class="floor-plan-img" loading="lazy" alt="Floor Plan"></td>
+                        <td>1364</td>
+                        <td class="price-same">
+                            $5,788.00
+                            
+                        </td>
+                        <td>2026-04-27</td>
+                    </tr>
+        
+                </tbody>
+            </table>
+            
+            <div class="footer">
+                Generated by RentMiro Scraper
+            </div>
+        </div>
+    </body>
+    </html>
+    
