@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-28T16:23:16.958267",
+  "timestamp": "2026-02-28T17:17:55.995699",
   "url": "https://sightmap.com/app/api/v1/yjp2k0q9pxl/sightmaps/23140",
   "total_units": 43,
   "units": [
@@ -99,7 +99,7 @@
       "baths": 1,
       "floor_plan_image": "https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/68/3f/683fb96a7f8638a61f6ac1562767fc51.jpg",
       "floor": "62121",
-      "price_change": -62
+      "price_change": 0
     },
     {
       "unit_number": "E1904",
@@ -281,8 +281,7 @@
       "baths": 1,
       "floor_plan_image": "https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/6f/d2/6fd258ed50ee0fb6f2276813f1d0f1cb.jpg",
       "floor": "62145",
-      "price_change": 0,
-      "is_new": true
+      "price_change": 0
     },
     {
       "unit_number": "E316",
@@ -380,7 +379,7 @@
       "baths": 1,
       "floor_plan_image": "https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/0f/5e/0f5e192b0fa5f0ada75705bddbe56db2.jpg",
       "floor": "62144",
-      "price_change": -69
+      "price_change": 0
     },
     {
       "unit_number": "W1901",
