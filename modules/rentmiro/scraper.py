@@ -146,10 +146,20 @@ def get_previous_data():
 
 def analyze_changes(current_data, previous_data):
     """Analyze changes between current and previous data"""
+    changes = {
+        'added': [],
+        'removed': [],
+        'price_changed': [],
+        'date_changed': [],
+        'has_changes': False,
+        'summary_text': "数据无变化"
+    }
+
     if not previous_data or 'units' not in previous_data:
-        return "首次抓取数据，无法比较变化"
+        changes['summary_text'] = "首次抓取数据，无法比较变化"
+        return changes
         
-    changes = []
+    summary_lines = []
     
     # Create maps for easier comparison
     current_units = {u['unit_number']: u for u in current_data['units']}
@@ -158,7 +168,9 @@ def analyze_changes(current_data, previous_data):
     # Check for new units
     for unit_num, unit in current_units.items():
         if unit_num not in previous_units:
-            changes.append(f"🏠 新增房源: {unit['display_unit']} ({unit['floor_plan']}) - {unit['display_price']} - {unit['available_on']}")
+            desc = f"{unit['display_unit']} ({unit['floor_plan']}) - {unit['display_price']}"
+            changes['added'].append(unit)
+            summary_lines.append(f"🏠 新增: {desc}")
             unit['is_new'] = True
         else:
             # Check for price changes
@@ -167,21 +179,28 @@ def analyze_changes(current_data, previous_data):
                 diff = unit['price'] - prev_unit['price']
                 unit['price_change'] = diff
                 symbol = "🔺" if diff > 0 else "🔻"
-                changes.append(f"💰 价格变化 {unit['display_unit']}: {prev_unit['display_price']} -> {unit['display_price']} ({symbol}{abs(diff)})")
+                desc = f"{unit['display_unit']}: {prev_unit['display_price']} -> {unit['display_price']} ({symbol}{abs(diff)})"
+                changes['price_changed'].append({'unit': unit, 'diff': diff, 'desc': desc})
+                summary_lines.append(f"💰 调价: {desc}")
             
             # Check for availability date changes
             if unit['available_on'] != prev_unit['available_on']:
-                 changes.append(f"📅 日期变化 {unit['display_unit']}: {prev_unit['available_on']} -> {unit['available_on']}")
+                 desc = f"{unit['display_unit']}: {prev_unit['available_on']} -> {unit['available_on']}"
+                 changes['date_changed'].append({'unit': unit, 'old_date': prev_unit['available_on'], 'new_date': unit['available_on']})
+                 summary_lines.append(f"📅 日期: {desc}")
 
     # Check for removed units
     for unit_num, unit in previous_units.items():
         if unit_num not in current_units:
-            changes.append(f"❌ 房源下架: {unit['display_unit']} ({unit['floor_plan']})")
+            desc = f"{unit['display_unit']} ({unit['floor_plan']})"
+            changes['removed'].append(unit)
+            summary_lines.append(f"❌ 下架: {desc}")
             
-    if not changes:
-        return "数据无变化"
+    if summary_lines:
+        changes['has_changes'] = True
+        changes['summary_text'] = "\n".join(summary_lines)
         
-    return "\n".join(changes)
+    return changes
 
 def save_data(data, status_code):
     """Save data and generate report"""
@@ -195,20 +214,52 @@ def save_data(data, status_code):
     previous_data = get_previous_data()
     
     # Analyze changes
-    changes_info = analyze_changes(data, previous_data)
-    print(f"📈 变化信息:\n{changes_info}")
+    changes = analyze_changes(data, previous_data)
+    print(f"📈 变化信息:\n{changes['summary_text']}")
     
     # Save current data
     with open('./modules/rentmiro/data.json', 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
         
     # Generate HTML report
-    generate_html(data, changes_info)
+    generate_html(data, changes)
     
     print("=== 数据保存流程完成 ===")
 
-def generate_html(data, changes_info):
+def generate_html(data, changes):
     """Generate HTML report"""
+    
+    # Build changes HTML
+    changes_html = ""
+    if changes['has_changes']:
+        changes_html = '<div class="changes-container">'
+        
+        if changes['added']:
+            changes_html += '<div class="change-section added"><h3>🏠 新增房源</h3><ul>'
+            for unit in changes['added']:
+                changes_html += f"<li><strong>{unit['display_unit']}</strong> - {unit['floor_plan']} - {unit['display_price']} - {unit['available_on']}</li>"
+            changes_html += '</ul></div>'
+            
+        if changes['removed']:
+            changes_html += '<div class="change-section removed"><h3>❌ 下架房源</h3><ul>'
+            for unit in changes['removed']:
+                changes_html += f"<li><strong>{unit['display_unit']}</strong> - {unit['floor_plan']} - {unit['display_price']}</li>"
+            changes_html += '</ul></div>'
+            
+        if changes['price_changed']:
+            changes_html += '<div class="change-section price-changed"><h3>💰 价格变动</h3><ul>'
+            for item in changes['price_changed']:
+                changes_html += f"<li>{item['desc']}</li>"
+            changes_html += '</ul></div>'
+            
+        if changes['date_changed']:
+            changes_html += '<div class="change-section date-changed"><h3>📅 日期变动</h3><ul>'
+            for item in changes['date_changed']:
+                item_unit = item['unit']
+                changes_html += f"<li><strong>{item_unit['display_unit']}</strong>: {item['old_date']} -> {item['new_date']}</li>"
+            changes_html += '</ul></div>'
+            
+        changes_html += '</div>'
     
     html_content = f"""
     <!DOCTYPE html>
@@ -223,8 +274,18 @@ def generate_html(data, changes_info):
             .header a {{ color: white; text-decoration: none; }}
             .header a:hover {{ text-decoration: underline; }}
             .summary {{ background: #ecf0f1; padding: 15px; margin-bottom: 20px; border-radius: 0 0 8px 8px; }}
-            .changes {{ background: #fff3cd; padding: 15px; border-left: 5px solid #ffc107; margin-bottom: 20px; border-radius: 4px; }}
-            .changes pre {{ white-space: pre-wrap; margin: 0; font-family: inherit; }}
+            
+            /* Changes Section */
+            .changes-container {{ margin-bottom: 30px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }}
+            .change-section {{ padding: 15px; border-radius: 8px; border: 1px solid #ddd; }}
+            .change-section h3 {{ margin-top: 0; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 10px; }}
+            .change-section ul {{ padding-left: 20px; margin-bottom: 0; }}
+            .change-section li {{ margin-bottom: 5px; }}
+            
+            .added {{ background-color: #e8f5e9; border-color: #a5d6a7; color: #2e7d32; }}
+            .removed {{ background-color: #ffebee; border-color: #ef9a9a; color: #c62828; }}
+            .price-changed {{ background-color: #fff8e1; border-color: #ffe082; color: #f57f17; }}
+            .date-changed {{ background-color: #e3f2fd; border-color: #90caf9; color: #1565c0; }}
             
             /* Controls */
             .controls {{ margin: 20px 0; padding: 15px; background: #f8f9fa; border-radius: 8px; display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }}
@@ -292,10 +353,10 @@ def generate_html(data, changes_info):
                 document.getElementById('visibleCount').textContent = visibleCount;
             }}
             
-            // Set default date to today
+            // Set default date to empty (show all)
             window.onload = function() {{
-                const today = new Date().toISOString().split('T')[0];
-                document.getElementById('dateFilter').value = today;
+                // const today = new Date().toISOString().split('T')[0];
+                // document.getElementById('dateFilter').value = today;
                 filterTable();
             }}
         </script>
@@ -314,7 +375,7 @@ def generate_html(data, changes_info):
                 <strong>当前可用房源:</strong> {data.get('total_units')} 套
             </div>
             
-            {f'<div class="changes"><h3>🔔 变动通知</h3><pre>{changes_info}</pre></div>' if changes_info != "数据无变化" and changes_info != "首次抓取数据，无法比较变化" else ''}
+            {changes_html}
             
             <div class="controls">
                 <div class="control-group">
