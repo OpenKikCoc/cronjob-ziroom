@@ -4,6 +4,9 @@ on:
   schedule:
     - cron: "0 * * * *"  # Hourly
 
+permissions:
+  contents: write
+
 jobs:
   RunRentMiroMonitor:
     name: MonitorRentMiroData
@@ -21,32 +24,56 @@ jobs:
       - name: Install dependencies
         run: pip3 install -r ./core/requirements.txt
       
+      - name: Restore previous data
+        run: |
+          # Try to download previous data to maintain state
+          curl -f -o modules/rentmiro/data.json https://openkikcoc.github.io/cronjob-ziroom/modules/rentmiro/data.json || echo "No previous data found"
+          # Keep a copy to compare later
+          if [ -f modules/rentmiro/data.json ]; then
+            cp modules/rentmiro/data.json modules/rentmiro/data.json.bak
+          fi
+
       - name: Fetch rentmiro data
         run: bash ./modules/rentmiro/cronjob.sh
       
-      - name: Commit files 
-        id: commit-files
+      - name: Check for changes
+        id: check-changes
         run: |
-          if [ -n "$(git status --porcelain modules/rentmiro/data.json modules/rentmiro/data.html)" ]; then
-            git config --local user.email "github-actions[bot]@users.noreply.github.com"
-            git config --local user.name "github-actions[bot]"
-            git add modules/rentmiro/data.json modules/rentmiro/data.html
-            git commit -m "action: update rentmiro data"
+          if [ ! -f modules/rentmiro/data.json.bak ]; then
             echo "hasChange=true" >> $GITHUB_OUTPUT
           else
-            echo "No changes detected in rentmiro data"
+            # Compare JSON files ignoring the timestamp field
+            # We use jq to delete the timestamp field from both files and compare the output
+            # Redirect stderr to /dev/null to avoid noise if jq fails (though it shouldn't)
+            DIFF=$(diff <(jq 'del(.timestamp)' modules/rentmiro/data.json) <(jq 'del(.timestamp)' modules/rentmiro/data.json.bak) || true)
+            if [ -n "$DIFF" ]; then
+              echo "hasChange=true" >> $GITHUB_OUTPUT
+            else
+              echo "No changes detected"
+            fi
           fi
-      
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        if: ${{ steps.commit-files.outputs.hasChange == 'true' }}
+
+      - name: Prepare deployment
+        if: ${{ steps.check-changes.outputs.hasChange == 'true' }}
+        run: |
+          mkdir -p dist/modules/rentmiro
+          cp index.html dist/
+          cp modules/rentmiro/data.json dist/modules/rentmiro/
+          cp modules/rentmiro/data.html dist/modules/rentmiro/
+
+      - name: Deploy to GitHub Pages
+        if: ${{ steps.check-changes.outputs.hasChange == 'true' }}
+        uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
+          publish_dir: ./dist
+          keep_files: true
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
       
       - name: Send mail
         uses: dawidd6/action-send-mail@master
-        if: ${{ steps.commit-files.outputs.hasChange == 'true' }}
+        if: ${{ steps.check-changes.outputs.hasChange == 'true' }}
         with:
           server_address: smtp.qq.com
           server_port: 465

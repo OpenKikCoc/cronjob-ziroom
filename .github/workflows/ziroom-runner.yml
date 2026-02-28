@@ -4,6 +4,9 @@ on:
   schedule:
     - cron: "0 12 * * *"  # Daily at 12:00 PM
 
+permissions:
+  contents: write
+
 jobs:
   RunZiroomMonitor:
     name: MonitorZiroomData
@@ -21,35 +24,57 @@ jobs:
       - name: Install dependencies
         run: pip3 install -r ./core/requirements.txt
       
+      - name: Restore previous data
+        run: |
+          # Try to download previous data to maintain state
+          curl -f -o modules/ziroom/data.html https://openkikcoc.github.io/cronjob-ziroom/modules/ziroom/data.html || echo "No previous data found"
+          # Keep a copy to compare later
+          if [ -f modules/ziroom/data.html ]; then
+            cp modules/ziroom/data.html modules/ziroom/data.html.bak
+          fi
+
       - name: Fetch ziroom data
         env:
           URI: ${{ vars.URI }}
           KEYWORD: ${{ vars.KEYWORD }}
         run: bash ./modules/ziroom/cronjob.sh
       
-      - name: Commit files 
-        id: commit-files
+      - name: Check for changes
+        id: check-changes
         run: |
-          if [ -n "$(git status --porcelain modules/ziroom/data.html)" ]; then
-            git config --local user.email "github-actions[bot]@users.noreply.github.com"
-            git config --local user.name "github-actions[bot]"
-            git add modules/ziroom/data.html
-            git commit -m "action: update ziroom data"
+          if [ ! -f modules/ziroom/data.html.bak ]; then
             echo "hasChange=true" >> $GITHUB_OUTPUT
           else
-            echo "No changes detected in ziroom data"
+            # Compare HTML files ignoring the timestamp line
+            # We use grep to filter out the timestamp line and compare the rest
+            DIFF=$(diff <(grep -v "更新时间:" modules/ziroom/data.html) <(grep -v "更新时间:" modules/ziroom/data.html.bak) || true)
+            if [ -n "$DIFF" ]; then
+              echo "hasChange=true" >> $GITHUB_OUTPUT
+            else
+              echo "No changes detected"
+            fi
           fi
-      
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        if: ${{ steps.commit-files.outputs.hasChange == 'true' }}
+
+      - name: Prepare deployment
+        if: ${{ steps.check-changes.outputs.hasChange == 'true' }}
+        run: |
+          mkdir -p dist/modules/ziroom
+          cp index.html dist/
+          cp modules/ziroom/data.html dist/modules/ziroom/
+
+      - name: Deploy to GitHub Pages
+        if: ${{ steps.check-changes.outputs.hasChange == 'true' }}
+        uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
+          publish_dir: ./dist
+          keep_files: true
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
       
       - name: Send mail
         uses: dawidd6/action-send-mail@master
-        if: ${{ steps.commit-files.outputs.hasChange == 'true' }}
+        if: ${{ steps.check-changes.outputs.hasChange == 'true' }}
         with:
           server_address: smtp.qq.com
           server_port: 465
