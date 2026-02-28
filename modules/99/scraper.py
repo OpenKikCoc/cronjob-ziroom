@@ -242,24 +242,37 @@ def save_data(data, status_code):
                 <meta charset="utf-8">
                 <title>99.com 数据抓取结果</title>
                 <style>
-                    body {{ font-family: Arial, sans-serif; margin: 20px; }}
-                    table {{ border-collapse: collapse; width: 100%; margin-top: 20px; }}
-                    th, td {{ border: 1px solid #ddd; padding: 8px; text-align: left; }}
-                    th {{ background-color: #f2f2f2; }}
-                    .timestamp {{ color: #666; font-size: 14px; }}
-                    .summary {{ background-color: #e8f5e8; padding: 10px; border-radius: 5px; margin: 20px 0; }}
-                    .changes {{ background-color: #fff3cd; padding: 10px; border-radius: 5px; margin: 20px 0; border-left: 4px solid #ffc107; }}
-                    .changes pre {{ margin: 0; white-space: pre-wrap; font-family: monospace; }}
+                    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; margin: 0; background: #f5f7fa; color: #333; }
+                    .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+                    .header { background: #2c3e50; color: white; padding: 20px; border-radius: 8px 8px 0 0; display: flex; justify-content: space-between; align-items: center; }
+                    .header h1 { margin: 0; font-size: 1.5em; }
+                    .header a { color: white; text-decoration: none; background: rgba(255,255,255,0.2); padding: 5px 10px; border-radius: 4px; font-size: 0.9em; }
+                    
+                    table { border-collapse: collapse; width: 100%; margin-top: 0; box-shadow: 0 1px 3px rgba(0,0,0,0.1); background: white; }
+                    th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #ddd; }
+                    th { background-color: #f8f9fa; font-weight: 600; color: #2c3e50; }
+                    tr:hover { background-color: #f5f5f5; }
+                    
+                    .summary { background-color: white; padding: 20px; border-radius: 0 0 8px 8px; margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+                    .timestamp { color: #666; font-size: 14px; margin-bottom: 10px; }
+                    .changes { background-color: #fff3cd; padding: 15px; border-radius: 5px; margin: 20px 0; border-left: 5px solid #ffc107; }
+                    .changes pre { margin: 0; white-space: pre-wrap; font-family: monospace; }
                 </style>
             </head>
             <body>
-                <h1>99.com 数据抓取结果</h1>
-                <div class="timestamp">抓取时间: {data.get('timestamp', 'N/A')}</div>
-                <div class="summary">
-                    <strong>总记录数:</strong> {data.get('total_records', 0)}<br>
-                    <strong>数据源:</strong> {data.get('url', 'N/A')}<br>
-                    <strong>抓取方式:</strong> {data.get('method', 'N/A')}
-                </div>
+                <div class="container">
+                    <div class="header">
+                        <h1>99.com 数据抓取结果</h1>
+                        <a href="../../index.html">🏠 返回首页</a>
+                    </div>
+                    <div class="summary">
+                        <div class="timestamp">抓取时间: {data.get('timestamp', 'N/A')}</div>
+                        <div>
+                            <strong>总记录数:</strong> {data.get('total_records', 0)}<br>
+                            <strong>数据源:</strong> {data.get('url', 'N/A')}<br>
+                            <strong>抓取方式:</strong> {data.get('method', 'N/A')}
+                        </div>
+                    </div>
             """
             
             if data.get('data'):

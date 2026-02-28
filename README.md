@@ -2,6 +2,12 @@
 
 A modular data scraping project that supports automated monitoring and scraping of multiple data sources.
 
+## 🌐 Dashboard
+
+This project includes a web dashboard powered by GitHub Pages.
+
+**[View Dashboard](https://openkikcoc.github.io/cronjob-ziroom/)**
+
 ## 🏗️ Project Structure
 
 ```
