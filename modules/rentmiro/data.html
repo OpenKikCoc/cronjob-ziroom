@@ -11,8 +11,18 @@
             .header a { color: white; text-decoration: none; }
             .header a:hover { text-decoration: underline; }
             .summary { background: #ecf0f1; padding: 15px; margin-bottom: 20px; border-radius: 0 0 8px 8px; }
-            .changes { background: #fff3cd; padding: 15px; border-left: 5px solid #ffc107; margin-bottom: 20px; border-radius: 4px; }
-            .changes pre { white-space: pre-wrap; margin: 0; font-family: inherit; }
+            
+            /* Changes Section */
+            .changes-container { margin-bottom: 30px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+            .change-section { padding: 15px; border-radius: 8px; border: 1px solid #ddd; }
+            .change-section h3 { margin-top: 0; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 10px; }
+            .change-section ul { padding-left: 20px; margin-bottom: 0; }
+            .change-section li { margin-bottom: 5px; }
+            
+            .added { background-color: #e8f5e9; border-color: #a5d6a7; color: #2e7d32; }
+            .removed { background-color: #ffebee; border-color: #ef9a9a; color: #c62828; }
+            .price-changed { background-color: #fff8e1; border-color: #ffe082; color: #f57f17; }
+            .date-changed { background-color: #e3f2fd; border-color: #90caf9; color: #1565c0; }
             
             /* Controls */
             .controls { margin: 20px 0; padding: 15px; background: #f8f9fa; border-radius: 8px; display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
@@ -80,10 +90,10 @@
                 document.getElementById('visibleCount').textContent = visibleCount;
             }
             
-            // Set default date to today
+            // Set default date to empty (show all)
             window.onload = function() {
-                const today = new Date().toISOString().split('T')[0];
-                document.getElementById('dateFilter').value = today;
+                // const today = new Date().toISOString().split('T')[0];
+                // document.getElementById('dateFilter').value = today;
                 filterTable();
             }
         </script>
@@ -95,14 +105,14 @@
                     <h1 style="margin:0"><a href="https://www.rentmiro.com/floorplans" target="_blank" style="color:white; text-decoration:none;">RentMiro 公寓监控 🔗</a></h1>
                     <a href="../../index.html" style="color:white; text-decoration:none; background:rgba(255,255,255,0.2); padding:5px 10px; border-radius:4px; font-size:0.9em;">🏠 返回首页</a>
                 </div>
-                <p style="margin:10px 0 0 0; opacity: 0.8">更新时间: 2026-02-28T17:17:55.995699</p>
+                <p style="margin:10px 0 0 0; opacity: 0.8">更新时间: 2026-03-01T04:51:25.787895</p>
             </div>
             
             <div class="summary">
-                <strong>当前可用房源:</strong> 43 套
+                <strong>当前可用房源:</strong> 44 套
             </div>
             
-            
+            <div class="changes-container"><div class="change-section added"><h3>🏠 新增房源</h3><ul><li><strong>HOME W2012</strong> - A4 - $3,739.00 - 2026-05-30</li></ul></div><div class="change-section date-changed"><h3>📅 日期变动</h3><ul><li><strong>HOME E2011</strong>: 2026-02-28 -> 2026-03-01</li><li><strong>HOME W1904</strong>: 2026-02-28 -> 2026-03-01</li><li><strong>HOME W1012</strong>: 2026-02-28 -> 2026-03-01</li><li><strong>HOME W1003</strong>: 2026-02-28 -> 2026-03-01</li><li><strong>HOME W508</strong>: 2026-02-28 -> 2026-03-01</li><li><strong>HOME W801</strong>: 2026-02-28 -> 2026-03-01</li><li><strong>HOME W415</strong>: 2026-02-28 -> 2026-03-01</li><li><strong>HOME E316</strong>: 2026-02-28 -> 2026-03-01</li><li><strong>HOME E816</strong>: 2026-02-28 -> 2026-03-01</li><li><strong>HOME W502</strong>: 2026-02-28 -> 2026-03-01</li><li><strong>HOME E1007</strong>: 2026-02-28 -> 2026-03-01</li><li><strong>HOME W913</strong>: 2026-02-28 -> 2026-03-01</li><li><strong>HOME E1115</strong>: 2026-02-28 -> 2026-03-01</li><li><strong>HOME E902</strong>: 2026-02-28 -> 2026-03-01</li><li><strong>HOME W2307</strong>: 2026-02-28 -> 2026-03-01</li><li><strong>HOME W1813</strong>: 2026-02-28 -> 2026-03-01</li><li><strong>HOME W2407</strong>: 2026-02-28 -> 2026-03-01</li><li><strong>HOME E1307</strong>: 2026-02-28 -> 2026-03-01</li><li><strong>HOME W2313</strong>: 2026-02-28 -> 2026-03-01</li></ul></div></div>
             
             <div class="controls">
                 <div class="control-group">
@@ -123,7 +133,7 @@
                     <input type="date" id="dateFilter" onchange="filterTable()">
                 </div>
                 <div class="control-group" style="margin-left: auto; color: #666;">
-                    显示: <span id="visibleCount">43</span> / 43
+                    显示: <span id="visibleCount">44</span> / 44
                 </div>
             </div>
             
@@ -158,7 +168,7 @@
                         <td>2026-03-26</td>
                     </tr>
         
-                    <tr data-beds="1" data-price="3354" data-available="2026-02-28">
+                    <tr data-beds="1" data-price="3354" data-available="2026-03-01">
                         <td>
                             <span class="unit-badge">HOME E2011</span>
                             
@@ -173,7 +183,7 @@
                             $3,354.00
                             
                         </td>
-                        <td>2026-02-28</td>
+                        <td>2026-03-01</td>
                     </tr>
         
                     <tr data-beds="0" data-price="3432" data-available="2026-03-23">
@@ -230,7 +240,7 @@
                         <td>2026-04-01</td>
                     </tr>
         
-                    <tr data-beds="0" data-price="3474" data-available="2026-02-28">
+                    <tr data-beds="0" data-price="3474" data-available="2026-03-01">
                         <td>
                             <span class="unit-badge">HOME W1904</span>
                             
@@ -245,10 +255,10 @@
                             $3,474.00
                             
                         </td>
-                        <td>2026-02-28</td>
+                        <td>2026-03-01</td>
                     </tr>
         
-                    <tr data-beds="1" data-price="3538" data-available="2026-02-28">
+                    <tr data-beds="1" data-price="3538" data-available="2026-03-01">
                         <td>
                             <span class="unit-badge">HOME W1012</span>
                             
@@ -263,7 +273,7 @@
                             $3,538.00
                             
                         </td>
-                        <td>2026-02-28</td>
+                        <td>2026-03-01</td>
                     </tr>
         
                     <tr data-beds="0" data-price="3592" data-available="2026-03-17">
@@ -338,7 +348,7 @@
                         <td>2026-03-15</td>
                     </tr>
         
-                    <tr data-beds="1" data-price="3674" data-available="2026-02-28">
+                    <tr data-beds="1" data-price="3674" data-available="2026-03-01">
                         <td>
                             <span class="unit-badge">HOME W1003</span>
                             
@@ -353,10 +363,10 @@
                             $3,674.00
                             
                         </td>
-                        <td>2026-02-28</td>
+                        <td>2026-03-01</td>
                     </tr>
         
-                    <tr data-beds="0" data-price="3695" data-available="2026-02-28">
+                    <tr data-beds="0" data-price="3695" data-available="2026-03-01">
                         <td>
                             <span class="unit-badge">HOME W508</span>
                             
@@ -371,10 +381,10 @@
                             $3,695.00
                             
                         </td>
-                        <td>2026-02-28</td>
+                        <td>2026-03-01</td>
                     </tr>
         
-                    <tr data-beds="1" data-price="3734" data-available="2026-02-28">
+                    <tr data-beds="1" data-price="3734" data-available="2026-03-01">
                         <td>
                             <span class="unit-badge">HOME W801</span>
                             
@@ -389,7 +399,25 @@
                             $3,734.00
                             
                         </td>
-                        <td>2026-02-28</td>
+                        <td>2026-03-01</td>
+                    </tr>
+        
+                    <tr data-beds="1" data-price="3739" data-available="2026-05-30">
+                        <td>
+                            <span class="unit-badge">HOME W2012</span>
+                            <span class="new-badge">NEW</span>
+                        </td>
+                        <td>
+                            <strong>A4</strong><br>
+                            <span style="color:#666; font-size:0.9em">1B1B</span>
+                        </td>
+                        <td><img src="https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/68/3f/683fb96a7f8638a61f6ac1562767fc51.jpg" class="floor-plan-img" loading="lazy" alt="Floor Plan"></td>
+                        <td>746</td>
+                        <td class="price-same">
+                            $3,739.00
+                            
+                        </td>
+                        <td>2026-05-30</td>
                     </tr>
         
                     <tr data-beds="1" data-price="3784" data-available="2026-04-15">
@@ -446,7 +474,7 @@
                         <td>2026-04-26</td>
                     </tr>
         
-                    <tr data-beds="1" data-price="3881" data-available="2026-02-28">
+                    <tr data-beds="1" data-price="3881" data-available="2026-03-01">
                         <td>
                             <span class="unit-badge">HOME W415</span>
                             
@@ -461,7 +489,7 @@
                             $3,881.00
                             
                         </td>
-                        <td>2026-02-28</td>
+                        <td>2026-03-01</td>
                     </tr>
         
                     <tr data-beds="1" data-price="3919" data-available="2026-04-13">
@@ -500,7 +528,7 @@
                         <td>2026-04-20</td>
                     </tr>
         
-                    <tr data-beds="1" data-price="3994" data-available="2026-02-28">
+                    <tr data-beds="1" data-price="3994" data-available="2026-03-01">
                         <td>
                             <span class="unit-badge">HOME E316</span>
                             
@@ -515,7 +543,7 @@
                             $3,994.00
                             
                         </td>
-                        <td>2026-02-28</td>
+                        <td>2026-03-01</td>
                     </tr>
         
                     <tr data-beds="1" data-price="4014" data-available="2026-03-23">
@@ -608,7 +636,7 @@
                         <td>2026-04-09</td>
                     </tr>
         
-                    <tr data-beds="1" data-price="4090" data-available="2026-02-28">
+                    <tr data-beds="1" data-price="4090" data-available="2026-03-01">
                         <td>
                             <span class="unit-badge">HOME E816</span>
                             
@@ -623,7 +651,7 @@
                             $4,090.00
                             
                         </td>
-                        <td>2026-02-28</td>
+                        <td>2026-03-01</td>
                     </tr>
         
                     <tr data-beds="1" data-price="4094" data-available="2026-04-10">
@@ -644,7 +672,7 @@
                         <td>2026-04-10</td>
                     </tr>
         
-                    <tr data-beds="2" data-price="4754" data-available="2026-02-28">
+                    <tr data-beds="2" data-price="4754" data-available="2026-03-01">
                         <td>
                             <span class="unit-badge">HOME W502</span>
                             
@@ -659,10 +687,10 @@
                             $4,754.00
                             
                         </td>
-                        <td>2026-02-28</td>
+                        <td>2026-03-01</td>
                     </tr>
         
-                    <tr data-beds="2" data-price="4905" data-available="2026-02-28">
+                    <tr data-beds="2" data-price="4905" data-available="2026-03-01">
                         <td>
                             <span class="unit-badge">HOME E1007</span>
                             
@@ -677,10 +705,10 @@
                             $4,905.00
                             
                         </td>
-                        <td>2026-02-28</td>
+                        <td>2026-03-01</td>
                     </tr>
         
-                    <tr data-beds="2" data-price="5118" data-available="2026-02-28">
+                    <tr data-beds="2" data-price="5118" data-available="2026-03-01">
                         <td>
                             <span class="unit-badge">HOME W913</span>
                             
@@ -695,10 +723,10 @@
                             $5,118.00
                             
                         </td>
-                        <td>2026-02-28</td>
+                        <td>2026-03-01</td>
                     </tr>
         
-                    <tr data-beds="2" data-price="5291" data-available="2026-02-28">
+                    <tr data-beds="2" data-price="5291" data-available="2026-03-01">
                         <td>
                             <span class="unit-badge">HOME E1115</span>
                             
@@ -713,7 +741,7 @@
                             $5,291.00
                             
                         </td>
-                        <td>2026-02-28</td>
+                        <td>2026-03-01</td>
                     </tr>
         
                     <tr data-beds="2" data-price="5316" data-available="2026-04-14">
@@ -734,7 +762,7 @@
                         <td>2026-04-14</td>
                     </tr>
         
-                    <tr data-beds="2" data-price="5321" data-available="2026-02-28">
+                    <tr data-beds="2" data-price="5321" data-available="2026-03-01">
                         <td>
                             <span class="unit-badge">HOME E902</span>
                             
@@ -749,10 +777,10 @@
                             $5,321.00
                             
                         </td>
-                        <td>2026-02-28</td>
+                        <td>2026-03-01</td>
                     </tr>
         
-                    <tr data-beds="2" data-price="5366" data-available="2026-02-28">
+                    <tr data-beds="2" data-price="5366" data-available="2026-03-01">
                         <td>
                             <span class="unit-badge">HOME W2307</span>
                             
@@ -767,10 +795,10 @@
                             $5,366.00
                             
                         </td>
-                        <td>2026-02-28</td>
+                        <td>2026-03-01</td>
                     </tr>
         
-                    <tr data-beds="2" data-price="5408" data-available="2026-02-28">
+                    <tr data-beds="2" data-price="5408" data-available="2026-03-01">
                         <td>
                             <span class="unit-badge">HOME W1813</span>
                             
@@ -785,10 +813,10 @@
                             $5,408.00
                             
                         </td>
-                        <td>2026-02-28</td>
+                        <td>2026-03-01</td>
                     </tr>
         
-                    <tr data-beds="2" data-price="5416" data-available="2026-02-28">
+                    <tr data-beds="2" data-price="5416" data-available="2026-03-01">
                         <td>
                             <span class="unit-badge">HOME W2407</span>
                             
@@ -803,10 +831,10 @@
                             $5,416.00
                             
                         </td>
-                        <td>2026-02-28</td>
+                        <td>2026-03-01</td>
                     </tr>
         
-                    <tr data-beds="2" data-price="5481" data-available="2026-02-28">
+                    <tr data-beds="2" data-price="5481" data-available="2026-03-01">
                         <td>
                             <span class="unit-badge">HOME E1307</span>
                             
@@ -821,7 +849,7 @@
                             $5,481.00
                             
                         </td>
-                        <td>2026-02-28</td>
+                        <td>2026-03-01</td>
                     </tr>
         
                     <tr data-beds="2" data-price="5481" data-available="2026-04-02">
@@ -860,7 +888,7 @@
                         <td>2026-05-04</td>
                     </tr>
         
-                    <tr data-beds="2" data-price="5623" data-available="2026-02-28">
+                    <tr data-beds="2" data-price="5623" data-available="2026-03-01">
                         <td>
                             <span class="unit-badge">HOME W2313</span>
                             
@@ -875,7 +903,7 @@
                             $5,623.00
                             
                         </td>
-                        <td>2026-02-28</td>
+                        <td>2026-03-01</td>
                     </tr>
         
                     <tr data-beds="2" data-price="5788" data-available="2026-05-06">
