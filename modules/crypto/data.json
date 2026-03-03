@@ -1,4 +1,21 @@
 {
-  "timestamp": "2026-03-03T08:29:45.925024",
-  "items": []
+  "timestamp": "2026-03-03T09:32:46.139889",
+  "items": [
+    {
+      "title": "AirDrop not working after iOS 26 upgrade … - Apple Community",
+      "url": "https://discussions.apple.com/thread/256141207",
+      "description": "Sep 19, 2025 · AirDrop not working after iOS 26 upgrade on iPhone I upgraded my IOS across devices and now I can't seem to get Airdrop to …",
+      "source": "DuckDuckGo",
+      "query": "\"airdrop\" github contributors",
+      "timestamp": "2026-03-03T09:32:42.069993",
+      "strategy": "Search Result",
+      "quantity": "Unknown",
+      "end_date": "Unknown",
+      "relevance_score": 1,
+      "matched_keywords": [
+        "dev"
+      ],
+      "is_suspicious": false
+    }
+  ]
 }
