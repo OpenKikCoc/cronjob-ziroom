@@ -1,0 +1,88 @@
+{
+  "timestamp": "2026-03-03T04:29:36.887083",
+  "items": [
+    {
+      "title": "GitHub · Change is constant. GitHub keeps you ahead.",
+      "url": "https://github.com/",
+      "description": "Whether you’re scaling your development process or just learning how to code, GitHub is where you belong. Join the world’s most widely adopted developer platform to build the technologies that shape …",
+      "source": "DuckDuckGo",
+      "query": "github developer airdrop",
+      "timestamp": "2026-03-03T04:29:01.524487",
+      "strategy": "Search Result",
+      "quantity": "Unknown",
+      "end_date": "Unknown",
+      "relevance_score": 3,
+      "matched_keywords": [
+        "github",
+        "developer",
+        "dev"
+      ],
+      "is_suspicious": false
+    },
+    {
+      "title": "GitHub - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/GitHub",
+      "description": "GitHub is operated by Github, Inc., a subsidiary of Microsoft since 2018 which is headquartered in San Francisco. [10] It is commonly used to host open source software development projects. [11]",
+      "source": "DuckDuckGo",
+      "query": "github developer airdrop",
+      "timestamp": "2026-03-03T04:29:01.524495",
+      "strategy": "Search Result",
+      "quantity": "Unknown",
+      "end_date": "Unknown",
+      "relevance_score": 2,
+      "matched_keywords": [
+        "github",
+        "dev"
+      ],
+      "is_suspicious": false
+    },
+    {
+      "title": "From idea to pull request: A practical guide to building with GitHub ...",
+      "url": "https://github.blog/ai-and-ml/github-copilot/from-idea-to-pull-request-a-practical-guide-to-building-with-github-copilot-cli/",
+      "description": "4 days ago · A hands-on guide to using GitHub Copilot CLI to move from intent to reviewable changes, and how that work flows naturally into your IDE and GitHub.",
+      "source": "DuckDuckGo",
+      "query": "github developer airdrop",
+      "timestamp": "2026-03-03T04:29:01.524497",
+      "strategy": "Search Result",
+      "quantity": "Unknown",
+      "end_date": "Unknown",
+      "relevance_score": 1,
+      "matched_keywords": [
+        "github"
+      ],
+      "is_suspicious": false
+    },
+    {
+      "title": "Celestia: Download",
+      "url": "https://celestiaproject.space/download.html",
+      "description": "On this page you can download Celestia for Windows, macOS and Linux. There you will also find links to repositories and source code.",
+      "source": "DuckDuckGo",
+      "query": "celestia github airdrop",
+      "timestamp": "2026-03-03T04:29:10.034572",
+      "strategy": "Search Result",
+      "quantity": "Unknown",
+      "end_date": "Unknown",
+      "relevance_score": 1,
+      "matched_keywords": [
+        "repo"
+      ],
+      "is_suspicious": false
+    },
+    {
+      "title": "Fast Protocol",
+      "url": "https://airdrops.io/fast-protocol/",
+      "description": "",
+      "source": "airdrops.io",
+      "query": "latest",
+      "timestamp": "2026-03-03T04:29:31.293042",
+      "strategy": "Check website for details.",
+      "quantity": "Unknown",
+      "end_date": "Unknown",
+      "relevance_score": 1,
+      "matched_keywords": [
+        "protocol"
+      ],
+      "is_suspicious": false
+    }
+  ]
+}
