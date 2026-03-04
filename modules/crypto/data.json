@@ -1,39 +1,4 @@
 {
-  "timestamp": "2026-03-04T17:31:53.063652",
-  "items": [
-    {
-      "title": "DevDrops - ETHGlobal",
-      "url": "https://ethglobal.com/showcase/devdrops-frgpv",
-      "description": "DevDrop revolutionizes contributor rewards with AI-driven evaluation, ensuring fair token distribution based on GitHub …",
-      "source": "DuckDuckGo",
-      "query": "\"devdrop\" crypto",
-      "timestamp": "2026-03-04T17:31:51.294425",
-      "strategy": "Search Result",
-      "quantity": "Unknown",
-      "end_date": "Unknown",
-      "relevance_score": 3,
-      "matched_keywords": [
-        "github",
-        "dev",
-        "contributor"
-      ],
-      "is_suspicious": false
-    },
-    {
-      "title": "Mode | DevDrop 1",
-      "url": "https://www.mode.network/devdrop",
-      "description": "Launch your Dapps / L3s on Mode and compete for rewards. Mode DevDrop 1 is a competition between Dapps to drive …",
-      "source": "DuckDuckGo",
-      "query": "\"devdrop\" crypto",
-      "timestamp": "2026-03-04T17:31:51.294415",
-      "strategy": "Search Result",
-      "quantity": "Unknown",
-      "end_date": "Unknown",
-      "relevance_score": 1,
-      "matched_keywords": [
-        "dev"
-      ],
-      "is_suspicious": false
-    }
-  ]
+  "timestamp": "2026-03-04T18:34:50.939519",
+  "items": []
 }
