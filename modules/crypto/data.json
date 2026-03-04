@@ -1,13 +1,31 @@
 {
-  "timestamp": "2026-03-04T16:32:25.605079",
+  "timestamp": "2026-03-04T17:31:53.063652",
   "items": [
     {
-      "title": "AirDrop is not working after new iOS 17 u… - Apple Community",
-      "url": "https://discussions.apple.com/thread/255139902",
-      "description": "Sep 20, 2023 · The update to iOS 17 stopped Airdrop working, the Share button worked but the Airdrop button did nothing, or the screen turned white. What I’ve come to understand, Airdrop between devices …",
+      "title": "DevDrops - ETHGlobal",
+      "url": "https://ethglobal.com/showcase/devdrops-frgpv",
+      "description": "DevDrop revolutionizes contributor rewards with AI-driven evaluation, ensuring fair token distribution based on GitHub …",
       "source": "DuckDuckGo",
-      "query": "\"airdrop\" github contributors",
-      "timestamp": "2026-03-04T16:32:21.306764",
+      "query": "\"devdrop\" crypto",
+      "timestamp": "2026-03-04T17:31:51.294425",
+      "strategy": "Search Result",
+      "quantity": "Unknown",
+      "end_date": "Unknown",
+      "relevance_score": 3,
+      "matched_keywords": [
+        "github",
+        "dev",
+        "contributor"
+      ],
+      "is_suspicious": false
+    },
+    {
+      "title": "Mode | DevDrop 1",
+      "url": "https://www.mode.network/devdrop",
+      "description": "Launch your Dapps / L3s on Mode and compete for rewards. Mode DevDrop 1 is a competition between Dapps to drive …",
+      "source": "DuckDuckGo",
+      "query": "\"devdrop\" crypto",
+      "timestamp": "2026-03-04T17:31:51.294415",
       "strategy": "Search Result",
       "quantity": "Unknown",
       "end_date": "Unknown",
