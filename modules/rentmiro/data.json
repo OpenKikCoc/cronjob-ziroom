@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-05T04:11:03.143737",
+  "timestamp": "2026-03-05T18:01:30.473169",
   "url": "https://sightmap.com/app/api/v1/yjp2k0q9pxl/sightmaps/23140",
   "total_units": 40,
   "units": [
@@ -399,15 +399,15 @@
       "unit_number": "W913",
       "display_unit": "HOME W913",
       "area": 1210,
-      "price": 5213,
-      "display_price": "$5,213.00",
+      "price": 5133,
+      "display_price": "$5,133.00",
       "available_on": "2026-03-05",
       "floor_plan": "B8 + Den",
       "beds": 2,
       "baths": 2,
       "floor_plan_image": "https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/a9/5c/a95c6d3b0474c2cc492e82e01df73634.jpg",
       "floor": "62145",
-      "price_change": 0
+      "price_change": -80
     },
     {
       "unit_number": "E1115",
@@ -422,6 +422,20 @@
       "floor_plan_image": "https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/bb/61/bb61c51e7b612faff39b6173d63d71f4.jpg",
       "floor": "62122",
       "price_change": 0
+    },
+    {
+      "unit_number": "W2307",
+      "display_unit": "HOME W2307",
+      "area": 1076,
+      "price": 5291,
+      "display_price": "$5,291.00",
+      "available_on": "2026-03-05",
+      "floor_plan": "B1",
+      "beds": 2,
+      "baths": 2,
+      "floor_plan_image": "https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/ad/f3/adf3e609a7cb3d86d67aaa6318aeaf29.jpg",
+      "floor": "62134",
+      "price_change": -90
     },
     {
       "unit_number": "W2207",
@@ -449,20 +463,6 @@
       "baths": 2,
       "floor_plan_image": "https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/ea/eb/eaeb8137c2e891a6765ce9cd2239f935.jpg",
       "floor": "62145",
-      "price_change": 0
-    },
-    {
-      "unit_number": "W2307",
-      "display_unit": "HOME W2307",
-      "area": 1076,
-      "price": 5381,
-      "display_price": "$5,381.00",
-      "available_on": "2026-03-05",
-      "floor_plan": "B1",
-      "beds": 2,
-      "baths": 2,
-      "floor_plan_image": "https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/ad/f3/adf3e609a7cb3d86d67aaa6318aeaf29.jpg",
-      "floor": "62134",
       "price_change": 0
     },
     {
