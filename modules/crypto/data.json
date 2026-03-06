@@ -1,4 +1,21 @@
 {
-  "timestamp": "2026-03-06T12:33:08.350499",
-  "items": []
+  "timestamp": "2026-03-06T21:20:40.712987",
+  "items": [
+    {
+      "title": "AirDrop is not working after new iOS 17 u… - Apple Community",
+      "url": "https://discussions.apple.com/thread/255139902",
+      "description": "Sep 20, 2023 · The update to iOS 17 stopped Airdrop working, the Share button worked but the Airdrop button did nothing, or the screen turned white. What I’ve come to understand, Airdrop between devices …",
+      "source": "DuckDuckGo",
+      "query": "\"airdrop\" github contributors",
+      "timestamp": "2026-03-06T21:20:36.290510",
+      "strategy": "Search Result",
+      "quantity": "Unknown",
+      "end_date": "Unknown",
+      "relevance_score": 1,
+      "matched_keywords": [
+        "dev"
+      ],
+      "is_suspicious": false
+    }
+  ]
 }
