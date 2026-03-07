@@ -1,4 +1,57 @@
 {
-  "timestamp": "2026-03-07T17:13:32.705469",
-  "items": []
+  "timestamp": "2026-03-07T19:14:48.471424",
+  "items": [
+    {
+      "title": "Potential Celestia Airdrop Guide, How to Be Eligible?",
+      "url": "https://nftcopilot.com/potential-airdrops/celestia",
+      "description": "Dive into the exciting Celestia airdrop, where 60 million TIA tokens were distributed to various ecosystem users and developers, including Ethereum rollup users, Cosmos stakers, and GitHub …",
+      "source": "DuckDuckGo",
+      "query": "\"airdrop\" github contributors",
+      "timestamp": "2026-03-07T19:14:43.915189",
+      "strategy": "Search Result",
+      "quantity": "Unknown",
+      "end_date": "Unknown",
+      "relevance_score": 3,
+      "matched_keywords": [
+        "github",
+        "developer",
+        "dev"
+      ],
+      "is_suspicious": false
+    },
+    {
+      "title": "DevDrops - ETHGlobal",
+      "url": "https://ethglobal.com/showcase/devdrops-frgpv",
+      "description": "DevDrop revolutionizes contributor rewards with AI-driven evaluation, ensuring fair token distribution based on GitHub …",
+      "source": "DuckDuckGo",
+      "query": "\"devdrop\" crypto",
+      "timestamp": "2026-03-07T19:14:46.712880",
+      "strategy": "Search Result",
+      "quantity": "Unknown",
+      "end_date": "Unknown",
+      "relevance_score": 3,
+      "matched_keywords": [
+        "github",
+        "dev",
+        "contributor"
+      ],
+      "is_suspicious": false
+    },
+    {
+      "title": "Mode | DevDrop 1",
+      "url": "https://www.mode.network/devdrop",
+      "description": "Launch your Dapps / L3s on Mode and compete for rewards. Mode DevDrop 1 is a competition between Dapps to drive …",
+      "source": "DuckDuckGo",
+      "query": "\"devdrop\" crypto",
+      "timestamp": "2026-03-07T19:14:46.712890",
+      "strategy": "Search Result",
+      "quantity": "Unknown",
+      "end_date": "Unknown",
+      "relevance_score": 1,
+      "matched_keywords": [
+        "dev"
+      ],
+      "is_suspicious": false
+    }
+  ]
 }
