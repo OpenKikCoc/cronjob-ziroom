@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-07T21:18:45.063643",
+  "timestamp": "2026-03-07T22:20:44.085314",
   "url": "https://sightmap.com/app/api/v1/yjp2k0q9pxl/sightmaps/23140",
   "total_units": 40,
   "units": [
@@ -99,7 +99,7 @@
       "baths": 1,
       "floor_plan_image": "https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/1b/74/1b7460da18d92de9b7070de0848b283a.jpg",
       "floor": "62121",
-      "price_change": -67
+      "price_change": 0
     },
     {
       "unit_number": "W1705",
@@ -379,7 +379,7 @@
       "baths": 2,
       "floor_plan_image": "https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/a9/5c/a95c6d3b0474c2cc492e82e01df73634.jpg",
       "floor": "62145",
-      "price_change": -94
+      "price_change": 0
     },
     {
       "unit_number": "E1007",
@@ -407,7 +407,7 @@
       "baths": 2,
       "floor_plan_image": "https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/ad/f3/adf3e609a7cb3d86d67aaa6318aeaf29.jpg",
       "floor": "62134",
-      "price_change": -90
+      "price_change": 0
     },
     {
       "unit_number": "E1115",
@@ -463,8 +463,7 @@
       "baths": 2,
       "floor_plan_image": "https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/a9/5c/a95c6d3b0474c2cc492e82e01df73634.jpg",
       "floor": "62122",
-      "price_change": 0,
-      "is_new": true
+      "price_change": 0
     },
     {
       "unit_number": "W2407",
