@@ -264,6 +264,12 @@ def analyze_and_filter(items):
         'instagram.com', 'reddit.com'
     ]
     
+    # Blacklist keywords to exclude non-crypto items (e.g. Apple AirDrop)
+    blacklist_keywords = [
+        'apple', 'ios', 'macbook', 'macos', 'iphone', 'ipad',
+        'bluetooth', 'wifi', 'wi-fi', 'transfer files', 'icloud'
+    ]
+    
     for item in items:
         url = item['url']
         
@@ -278,6 +284,10 @@ def analyze_and_filter(items):
             
         # Check relevance
         text = (item['title'] + " " + item['description'] + " " + item.get('strategy', '')).lower()
+        
+        # Check text against blacklist keywords
+        if any(bkw in text for bkw in blacklist_keywords):
+            continue
         
         # Must have required keyword
         has_required = any(kw in text for kw in required_keywords)
