@@ -1,23 +1,4 @@
 {
-  "timestamp": "2026-03-08T18:20:54.622429",
-  "items": [
-    {
-      "title": "Celestia $TIA Airdrop: A Comprehensive Breakdown - ICI",
-      "url": "https://interchaininfo.zone/resources/celestia-tia-airdrop-details",
-      "description": "Apr 26, 2024 · This category targets public GitHub contributors to key protocol infrastructures like Ethereum, rollups, Bitcoin, and Cosmos. It also …",
-      "source": "DuckDuckGo",
-      "query": "\"airdrop\" github contributors",
-      "timestamp": "2026-03-08T18:20:50.888416",
-      "strategy": "Search Result",
-      "quantity": "Unknown",
-      "end_date": "Unknown",
-      "relevance_score": 3,
-      "matched_keywords": [
-        "github",
-        "protocol",
-        "contributor"
-      ],
-      "is_suspicious": false
-    }
-  ]
+  "timestamp": "2026-03-08T19:17:08.399778",
+  "items": []
 }
