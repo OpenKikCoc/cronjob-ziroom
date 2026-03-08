@@ -1,4 +1,58 @@
 {
-  "timestamp": "2026-03-08T07:25:10.603081",
-  "items": []
+  "timestamp": "2026-03-08T09:20:07.434154",
+  "items": [
+    {
+      "title": "DevDrops - ETHGlobal",
+      "url": "https://ethglobal.com/showcase/devdrops-frgpv",
+      "description": "DevDrop revolutionizes contributor rewards with AI-driven evaluation, ensuring fair token distribution based on GitHub contributions. Using Ethereum smart contracts and Merkle trees, it guarantees …",
+      "source": "DuckDuckGo",
+      "query": "\"devdrop\" crypto",
+      "timestamp": "2026-03-08T09:20:05.863828",
+      "strategy": "Search Result",
+      "quantity": "Unknown",
+      "end_date": "Unknown",
+      "relevance_score": 4,
+      "matched_keywords": [
+        "github",
+        "dev",
+        "contract",
+        "contributor"
+      ],
+      "is_suspicious": false
+    },
+    {
+      "title": "Celestia $TIA Airdrop: A Comprehensive Breakdown - ICI",
+      "url": "https://interchaininfo.zone/resources/celestia-tia-airdrop-details",
+      "description": "Apr 26, 2024 · This category targets public GitHub contributors to key protocol infrastructures like Ethereum, rollups, Bitcoin, and Cosmos. It also …",
+      "source": "DuckDuckGo",
+      "query": "\"airdrop\" github contributors",
+      "timestamp": "2026-03-08T09:20:03.505228",
+      "strategy": "Search Result",
+      "quantity": "Unknown",
+      "end_date": "Unknown",
+      "relevance_score": 3,
+      "matched_keywords": [
+        "github",
+        "protocol",
+        "contributor"
+      ],
+      "is_suspicious": false
+    },
+    {
+      "title": "Mode | DevDrop 1",
+      "url": "https://www.mode.network/devdrop",
+      "description": "Launch your Dapps / L3s on Mode and compete for rewards. Mode DevDrop 1 is a competition between Dapps to drive impact to Mode Network. In return, successful dapps will share up to 5% of the token …",
+      "source": "DuckDuckGo",
+      "query": "\"devdrop\" crypto",
+      "timestamp": "2026-03-08T09:20:05.863818",
+      "strategy": "Search Result",
+      "quantity": "Unknown",
+      "end_date": "Unknown",
+      "relevance_score": 1,
+      "matched_keywords": [
+        "dev"
+      ],
+      "is_suspicious": false
+    }
+  ]
 }
