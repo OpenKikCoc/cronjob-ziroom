@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-13T15:40:13.325507",
+  "timestamp": "2026-03-13T16:37:40.033303",
   "url": "https://sightmap.com/app/api/v1/yjp2k0q9pxl/sightmaps/23140",
   "total_units": 39,
   "units": [
@@ -183,7 +183,7 @@
       "baths": 1,
       "floor_plan_image": "https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/0f/5e/0f5e192b0fa5f0ada75705bddbe56db2.jpg",
       "floor": "62139",
-      "price_change": -67
+      "price_change": 0
     },
     {
       "unit_number": "E816",
