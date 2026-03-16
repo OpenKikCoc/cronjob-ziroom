@@ -1,40 +1,4 @@
 {
-  "timestamp": "2026-03-16T19:48:03.143549",
-  "items": [
-    {
-      "title": "DevDrops - ETHGlobal",
-      "url": "https://ethglobal.com/showcase/devdrops-frgpv",
-      "description": "DevDrop revolutionizes contributor rewards with AI-driven evaluation, ensuring fair token distribution based on GitHub contributions. Using Ethereum smart contracts and Merkle trees, it guarantees …",
-      "source": "DuckDuckGo",
-      "query": "\"devdrop\" crypto",
-      "timestamp": "2026-03-16T19:48:01.230439",
-      "strategy": "Search Result",
-      "quantity": "Unknown",
-      "end_date": "Unknown",
-      "relevance_score": 4,
-      "matched_keywords": [
-        "github",
-        "dev",
-        "contract",
-        "contributor"
-      ],
-      "is_suspicious": false
-    },
-    {
-      "title": "Mode | DevDrop 1",
-      "url": "https://www.mode.network/devdrop",
-      "description": "Launch your Dapps / L3s on Mode and compete for rewards. Mode DevDrop 1 is a competition between Dapps to drive impact to Mode Network. In return, successful dapps will share up to 5% of the token …Open-source block explorer by Blockscout. Search transactions, verify smart …Mode is at the forefront of a transformative shift in decentralized finance (DeFi), …",
-      "source": "DuckDuckGo",
-      "query": "\"devdrop\" crypto",
-      "timestamp": "2026-03-16T19:48:01.230430",
-      "strategy": "Search Result",
-      "quantity": "Unknown",
-      "end_date": "Unknown",
-      "relevance_score": 1,
-      "matched_keywords": [
-        "dev"
-      ],
-      "is_suspicious": false
-    }
-  ]
+  "timestamp": "2026-03-16T20:28:08.744038",
+  "items": []
 }
