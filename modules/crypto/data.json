@@ -1,4 +1,74 @@
 {
-  "timestamp": "2026-03-16T20:28:08.744038",
-  "items": []
+  "timestamp": "2026-03-16T21:30:43.590608",
+  "items": [
+    {
+      "title": "DevDrops - ETHGlobal",
+      "url": "https://ethglobal.com/showcase/devdrops-frgpv",
+      "description": "DevDrop revolutionizes contributor rewards with AI-driven evaluation, ensuring fair token distribution based on GitHub contributions. Using Ethereum smart contracts and Merkle trees, it guarantees …",
+      "source": "DuckDuckGo",
+      "query": "\"devdrop\" crypto",
+      "timestamp": "2026-03-16T21:30:41.614564",
+      "strategy": "Search Result",
+      "quantity": "Unknown",
+      "end_date": "Unknown",
+      "relevance_score": 4,
+      "matched_keywords": [
+        "github",
+        "dev",
+        "contract",
+        "contributor"
+      ],
+      "is_suspicious": false
+    },
+    {
+      "title": "Actions OIDC tokens now support repository custom properties",
+      "url": "https://github.blog/changelog/2026-03-12-actions-oidc-tokens-now-support-repository-custom-properties/",
+      "description": "4 days ago · GitHub Actions OpenID Connect (OIDC) tokens now support repository custom properties as claims. Additionally, a new settings page is available in public preview, making it easy to configure OIDC …",
+      "source": "DuckDuckGo",
+      "query": "\"claim\" token github commit",
+      "timestamp": "2026-03-16T21:30:40.187093",
+      "strategy": "Search Result",
+      "quantity": "Unknown",
+      "end_date": "Unknown",
+      "relevance_score": 2,
+      "matched_keywords": [
+        "github",
+        "repo"
+      ],
+      "is_suspicious": false
+    },
+    {
+      "title": "amazon web services - Github Actions OIDC - Stack Overflow",
+      "url": "https://stackoverflow.com/questions/76784270/github-actions-oidc-what-are-all-the-possible-values-of-the-sub-claim-on-the",
+      "description": "Jul 28, 2023 · After some permissions errors with the aws-actions/amazon-ecr-login, I finally realized - after stumbling upon this answer - that I had configured the sub claim in the AWS Trust Policy wrong.",
+      "source": "DuckDuckGo",
+      "query": "\"claim\" token github commit",
+      "timestamp": "2026-03-16T21:30:40.187103",
+      "strategy": "Search Result",
+      "quantity": "Unknown",
+      "end_date": "Unknown",
+      "relevance_score": 2,
+      "matched_keywords": [
+        "github",
+        "stack"
+      ],
+      "is_suspicious": false
+    },
+    {
+      "title": "Mode | DevDrop 1",
+      "url": "https://www.mode.network/devdrop",
+      "description": "Launch your Dapps / L3s on Mode and compete for rewards. Mode DevDrop 1 is a competition between Dapps to drive impact to Mode Network. In return, successful dapps will share up to 5% of the token …Open-source block explorer by Blockscout. Search transactions, verify smart …Mode is at the forefront of a transformative shift in decentralized finance (DeFi), …",
+      "source": "DuckDuckGo",
+      "query": "\"devdrop\" crypto",
+      "timestamp": "2026-03-16T21:30:41.614552",
+      "strategy": "Search Result",
+      "quantity": "Unknown",
+      "end_date": "Unknown",
+      "relevance_score": 1,
+      "matched_keywords": [
+        "dev"
+      ],
+      "is_suspicious": false
+    }
+  ]
 }
