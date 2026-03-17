@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-17T01:55:52.286932",
+  "timestamp": "2026-03-17T04:18:53.915564",
   "url": "https://sightmap.com/app/api/v1/yjp2k0q9pxl/sightmaps/23140",
   "total_units": 42,
   "units": [
@@ -309,8 +309,7 @@
       "baths": 1,
       "floor_plan_image": "https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/af/51/af51f9b56112e0a7631b8c39bcdc83c6.jpg",
       "floor": "62135",
-      "price_change": 0,
-      "is_new": true
+      "price_change": 0
     },
     {
       "unit_number": "W2012",
