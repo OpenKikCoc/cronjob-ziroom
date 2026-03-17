@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-03-17T11:41:33.583768",
+  "timestamp": "2026-03-17T16:03:45.724071",
   "url": "https://sightmap.com/app/api/v1/yjp2k0q9pxl/sightmaps/23140",
-  "total_units": 40,
+  "total_units": 44,
   "units": [
     {
       "unit_number": "E404",
@@ -200,6 +200,21 @@
       "price_change": 0
     },
     {
+      "unit_number": "E503",
+      "display_unit": "HOME E503",
+      "area": 756,
+      "price": 3789,
+      "display_price": "$3,789.00",
+      "available_on": "2026-05-25",
+      "floor_plan": "A5",
+      "beds": 1,
+      "baths": 1,
+      "floor_plan_image": "https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/54/d9/54d9e364fcea2e2de624085b37eef025.jpeg",
+      "floor": "62141",
+      "price_change": 0,
+      "is_new": true
+    },
+    {
       "unit_number": "E816",
       "display_unit": "HOME E816",
       "area": 890,
@@ -282,6 +297,21 @@
       "floor_plan_image": "https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/13/b3/13b373f52d2350dece81457350fb1a34.jpg",
       "floor": "62121",
       "price_change": 0
+    },
+    {
+      "unit_number": "W2410",
+      "display_unit": "HOME W2410",
+      "area": 848,
+      "price": 3954,
+      "display_price": "$3,954.00",
+      "available_on": "2026-04-18",
+      "floor_plan": "A13",
+      "beds": 1,
+      "baths": 1,
+      "floor_plan_image": "https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/af/51/af51f9b56112e0a7631b8c39bcdc83c6.jpg",
+      "floor": "62135",
+      "price_change": 0,
+      "is_new": true
     },
     {
       "unit_number": "W1301",
@@ -466,6 +496,21 @@
       "price_change": 0
     },
     {
+      "unit_number": "E1415",
+      "display_unit": "HOME E1415",
+      "area": 1214,
+      "price": 5406,
+      "display_price": "$5,406.00",
+      "available_on": "2026-05-25",
+      "floor_plan": "B5",
+      "beds": 2,
+      "baths": 2,
+      "floor_plan_image": "https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/bb/61/bb61c51e7b612faff39b6173d63d71f4.jpg",
+      "floor": "62125",
+      "price_change": 0,
+      "is_new": true
+    },
+    {
       "unit_number": "W2407",
       "display_unit": "HOME W2407",
       "area": 1074,
@@ -520,6 +565,21 @@
       "floor_plan_image": "https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/f2/15/f215bd1762cdeac8c86009a2d04273f7.jpg",
       "floor": "62131",
       "price_change": 0
+    },
+    {
+      "unit_number": "W2302",
+      "display_unit": "HOME W2302",
+      "area": 1130,
+      "price": 5696,
+      "display_price": "$5,696.00",
+      "available_on": "2026-05-02",
+      "floor_plan": "B2",
+      "beds": 2,
+      "baths": 2,
+      "floor_plan_image": "https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/f2/15/f215bd1762cdeac8c86009a2d04273f7.jpg",
+      "floor": "62134",
+      "price_change": 0,
+      "is_new": true
     },
     {
       "unit_number": "E2401",
