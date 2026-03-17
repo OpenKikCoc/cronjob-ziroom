@@ -1,21 +1,37 @@
 {
-  "timestamp": "2026-03-17T06:52:42.529782",
+  "timestamp": "2026-03-17T07:47:57.462502",
   "items": [
     {
-      "title": "Celestia $TIA Airdrop: A Comprehensive Breakdown - ICI",
-      "url": "https://interchaininfo.zone/resources/celestia-tia-airdrop-details",
-      "description": "Apr 26, 2024 · This category targets public GitHub contributors to key protocol infrastructures like Ethereum, rollups, Bitcoin, and Cosmos. It also includes contributors to Ethereum and Bitcoin …",
+      "title": "DevDrops - ETHGlobal",
+      "url": "https://ethglobal.com/showcase/devdrops-frgpv",
+      "description": "DevDrop revolutionizes contributor rewards with AI-driven evaluation, ensuring fair token distribution based on GitHub contributions. …",
       "source": "DuckDuckGo",
-      "query": "\"airdrop\" github contributors",
-      "timestamp": "2026-03-17T06:52:38.451903",
+      "query": "\"devdrop\" crypto",
+      "timestamp": "2026-03-17T07:47:55.532905",
       "strategy": "Search Result",
       "quantity": "Unknown",
       "end_date": "Unknown",
       "relevance_score": 3,
       "matched_keywords": [
         "github",
-        "protocol",
+        "dev",
         "contributor"
+      ],
+      "is_suspicious": false
+    },
+    {
+      "title": "Mode | DevDrop 1",
+      "url": "https://www.mode.network/devdrop",
+      "description": "Launch your Dapps / L3s on Mode and compete for rewards. Mode DevDrop 1 is a competition between Dapps to drive impact to Mode …",
+      "source": "DuckDuckGo",
+      "query": "\"devdrop\" crypto",
+      "timestamp": "2026-03-17T07:47:55.532896",
+      "strategy": "Search Result",
+      "quantity": "Unknown",
+      "end_date": "Unknown",
+      "relevance_score": 1,
+      "matched_keywords": [
+        "dev"
       ],
       "is_suspicious": false
     }
