@@ -1,37 +1,20 @@
 {
-  "timestamp": "2026-03-17T10:40:51.517860",
+  "timestamp": "2026-03-17T11:37:04.378982",
   "items": [
     {
-      "title": "DevDrops - ETHGlobal",
-      "url": "https://ethglobal.com/showcase/devdrops-frgpv",
-      "description": "DevDrop revolutionizes contributor rewards with AI-driven evaluation, ensuring fair token distribution based on GitHub …",
+      "title": "Actions OIDC tokens now support repository custom properties",
+      "url": "https://github.blog/changelog/2026-03-12-actions-oidc-tokens-now-support-repository-custom-properties/",
+      "description": "5 days ago · GitHub Actions OpenID Connect (OIDC) tokens now support repository custom properties as claims. Additionally, a new …",
       "source": "DuckDuckGo",
-      "query": "\"devdrop\" crypto",
-      "timestamp": "2026-03-17T10:40:49.851225",
+      "query": "\"claim\" token github commit",
+      "timestamp": "2026-03-17T11:37:01.196965",
       "strategy": "Search Result",
       "quantity": "Unknown",
       "end_date": "Unknown",
-      "relevance_score": 3,
+      "relevance_score": 2,
       "matched_keywords": [
         "github",
-        "dev",
-        "contributor"
-      ],
-      "is_suspicious": false
-    },
-    {
-      "title": "Mode | DevDrop 1",
-      "url": "https://www.mode.network/devdrop",
-      "description": "Launch your Dapps / L3s on Mode and compete for rewards. Mode DevDrop 1 is a competition between Dapps to drive …",
-      "source": "DuckDuckGo",
-      "query": "\"devdrop\" crypto",
-      "timestamp": "2026-03-17T10:40:49.851217",
-      "strategy": "Search Result",
-      "quantity": "Unknown",
-      "end_date": "Unknown",
-      "relevance_score": 1,
-      "matched_keywords": [
-        "dev"
+        "repo"
       ],
       "is_suspicious": false
     }
