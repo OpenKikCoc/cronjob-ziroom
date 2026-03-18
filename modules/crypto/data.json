@@ -1,21 +1,4 @@
 {
-  "timestamp": "2026-03-18T14:16:20.652451",
-  "items": [
-    {
-      "title": "File or Track a Claim | Allstate Insurance",
-      "url": "https://www.allstate.com/claims/file-track",
-      "description": "Report a claim or view your claim’s progress online via My Account or the Allstate® mobile app. Experience quick and easy …",
-      "source": "DuckDuckGo",
-      "query": "\"claim\" token github commit",
-      "timestamp": "2026-03-18T14:16:17.528640",
-      "strategy": "Search Result",
-      "quantity": "Unknown",
-      "end_date": "Unknown",
-      "relevance_score": 1,
-      "matched_keywords": [
-        "repo"
-      ],
-      "is_suspicious": false
-    }
-  ]
+  "timestamp": "2026-03-18T16:01:03.234564",
+  "items": []
 }
