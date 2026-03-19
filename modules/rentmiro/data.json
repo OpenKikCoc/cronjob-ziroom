@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-03-19T12:59:40.441774",
+  "timestamp": "2026-03-19T16:55:38.226820",
   "url": "https://sightmap.com/app/api/v1/yjp2k0q9pxl/sightmaps/23140",
-  "total_units": 47,
+  "total_units": 50,
   "units": [
     {
       "unit_number": "W811",
@@ -30,6 +30,21 @@
       "floor_plan_image": "https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/83/22/83221440cbe4d1108125407ffe905aba.jpg",
       "floor": "62140",
       "price_change": 0
+    },
+    {
+      "unit_number": "E1205",
+      "display_unit": "HOME E1205",
+      "area": 665,
+      "price": 3307,
+      "display_price": "$3,307.00",
+      "available_on": "2026-05-30",
+      "floor_plan": "S7",
+      "beds": 0,
+      "baths": 1,
+      "floor_plan_image": "https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/b0/d3/b0d3964a341b6982be09604de32b2a61.jpg",
+      "floor": "62123",
+      "price_change": 0,
+      "is_new": true
     },
     {
       "unit_number": "E2011",
@@ -326,6 +341,21 @@
       "price_change": 0
     },
     {
+      "unit_number": "W907",
+      "display_unit": "HOME W907",
+      "area": 776,
+      "price": 3969,
+      "display_price": "$3,969.00",
+      "available_on": "2026-06-05",
+      "floor_plan": "A8",
+      "beds": 1,
+      "baths": 1,
+      "floor_plan_image": "https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/93/7d/937d7361cbd6d1ff827700837ea34485.jpg",
+      "floor": "62145",
+      "price_change": 0,
+      "is_new": true
+    },
+    {
       "unit_number": "W1301",
       "display_unit": "HOME W1301",
       "area": 801,
@@ -618,6 +648,21 @@
       "floor_plan_image": "https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/f2/15/f215bd1762cdeac8c86009a2d04273f7.jpg",
       "floor": "62134",
       "price_change": 0
+    },
+    {
+      "unit_number": "E2203",
+      "display_unit": "HOME E2203",
+      "area": 1342,
+      "price": 5777,
+      "display_price": "$5,777.00",
+      "available_on": "2026-05-25",
+      "floor_plan": "B9 + Den",
+      "beds": 2,
+      "baths": 2,
+      "floor_plan_image": "https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/4e/32/4e32c571b4b2b6d625ec35944c417295.jpg",
+      "floor": "62133",
+      "price_change": 0,
+      "is_new": true
     },
     {
       "unit_number": "E2401",
