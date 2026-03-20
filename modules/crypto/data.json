@@ -1,21 +1,4 @@
 {
-  "timestamp": "2026-03-20T01:12:53.506698",
-  "items": [
-    {
-      "title": "File Your Weekly Claim | Iowa Workforce Development",
-      "url": "https://workforce.iowa.gov/unemployment/weekly-claim",
-      "description": "You must file a claim on iowaworks.gov each week that you wish to receive unemployment benefits. During this process, you must …",
-      "source": "DuckDuckGo",
-      "query": "\"claim\" token github commit",
-      "timestamp": "2026-03-20T01:12:50.225826",
-      "strategy": "Search Result",
-      "quantity": "Unknown",
-      "end_date": "Unknown",
-      "relevance_score": 1,
-      "matched_keywords": [
-        "dev"
-      ],
-      "is_suspicious": false
-    }
-  ]
+  "timestamp": "2026-03-20T04:05:29.512317",
+  "items": []
 }
