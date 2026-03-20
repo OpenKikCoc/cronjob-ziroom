@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-03-20T01:55:09.099765",
+  "timestamp": "2026-03-20T22:26:11.689873",
   "url": "https://sightmap.com/app/api/v1/yjp2k0q9pxl/sightmaps/23140",
-  "total_units": 49,
+  "total_units": 48,
   "units": [
     {
       "unit_number": "W811",
@@ -144,20 +144,6 @@
       "price_change": 0
     },
     {
-      "unit_number": "E316",
-      "display_unit": "HOME E316",
-      "area": 1002,
-      "price": 3661,
-      "display_price": "$3,661.00",
-      "available_on": "2026-03-20",
-      "floor_plan": "A17 + Den",
-      "beds": 1,
-      "baths": 1,
-      "floor_plan_image": "https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/0f/5e/0f5e192b0fa5f0ada75705bddbe56db2.jpg",
-      "floor": "62139",
-      "price_change": 0
-    },
-    {
       "unit_number": "E1811",
       "display_unit": "HOME E1811",
       "area": 605,
@@ -170,6 +156,20 @@
       "floor_plan_image": "https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/20/9d/209d2f3c4dd4ed1bbd55ab6a37ca814b.jpg",
       "floor": "62129",
       "price_change": 0
+    },
+    {
+      "unit_number": "E316",
+      "display_unit": "HOME E316",
+      "area": 1002,
+      "price": 3672,
+      "display_price": "$3,672.00",
+      "available_on": "2026-04-10",
+      "floor_plan": "A17 + Den",
+      "beds": 1,
+      "baths": 1,
+      "floor_plan_image": "https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/0f/5e/0f5e192b0fa5f0ada75705bddbe56db2.jpg",
+      "floor": "62139",
+      "price_change": 11
     },
     {
       "unit_number": "W503",
@@ -239,20 +239,6 @@
       "baths": 1,
       "floor_plan_image": "https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/54/d9/54d9e364fcea2e2de624085b37eef025.jpeg",
       "floor": "62141",
-      "price_change": 0
-    },
-    {
-      "unit_number": "E816",
-      "display_unit": "HOME E816",
-      "area": 890,
-      "price": 3812,
-      "display_price": "$3,812.00",
-      "available_on": "2026-03-20",
-      "floor_plan": "A17 + Den",
-      "beds": 1,
-      "baths": 1,
-      "floor_plan_image": "https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/0f/5e/0f5e192b0fa5f0ada75705bddbe56db2.jpg",
-      "floor": "62144",
       "price_change": 0
     },
     {
