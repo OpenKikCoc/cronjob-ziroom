@@ -1,4 +1,22 @@
 {
-  "timestamp": "2026-03-20T04:05:29.512317",
-  "items": []
+  "timestamp": "2026-03-21T12:27:26.846348",
+  "items": [
+    {
+      "title": "OpenClaw's Crypto Nightmare Just Got Worse",
+      "url": "https://beincrypto.com/openclaw-creator-warns-of-crypto-phishing-wave/",
+      "description": "2 days ago · The emails reference the “OpenClaw GitHub Contributors Airdrop” from accounts such as “ClawFunding” and “ClawReward.” Each message lists supposed “Selected Contributors” to …",
+      "source": "DuckDuckGo",
+      "query": "\"airdrop\" github contributors",
+      "timestamp": "2026-03-21T12:27:23.124078",
+      "strategy": "Search Result",
+      "quantity": "Unknown",
+      "end_date": "Unknown",
+      "relevance_score": 2,
+      "matched_keywords": [
+        "github",
+        "contributor"
+      ],
+      "is_suspicious": false
+    }
+  ]
 }
