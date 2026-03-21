@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-21T01:49:06.077509",
+  "timestamp": "2026-03-21T12:42:32.783567",
   "url": "https://sightmap.com/app/api/v1/yjp2k0q9pxl/sightmaps/23140",
   "total_units": 48,
   "units": [
@@ -205,7 +205,7 @@
       "area": 791,
       "price": 3699,
       "display_price": "$3,699.00",
-      "available_on": "2026-03-21",
+      "available_on": "2026-03-22",
       "floor_plan": "A9",
       "beds": 1,
       "baths": 1,
@@ -555,7 +555,7 @@
       "area": 1074,
       "price": 5416,
       "display_price": "$5,416.00",
-      "available_on": "2026-03-21",
+      "available_on": "2026-03-26",
       "floor_plan": "B1",
       "beds": 2,
       "baths": 2,
