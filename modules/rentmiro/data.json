@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-21T21:22:29.869538",
+  "timestamp": "2026-03-21T22:21:26.999126",
   "url": "https://sightmap.com/app/api/v1/yjp2k0q9pxl/sightmaps/23140",
   "total_units": 49,
   "units": [
@@ -281,8 +281,7 @@
       "baths": 1,
       "floor_plan_image": "https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/2c/ed/2ceda3fe1a14e3fbe9e365a836502db7.jpg",
       "floor": "62140",
-      "price_change": 0,
-      "is_new": true
+      "price_change": 0
     },
     {
       "unit_number": "E1510",
