@@ -1,20 +1,19 @@
 {
-  "timestamp": "2026-03-21T20:15:37.459715",
+  "timestamp": "2026-03-21T21:16:20.329841",
   "items": [
     {
-      "title": "Actions OIDC tokens now support repository custom properties",
-      "url": "https://github.blog/changelog/2026-03-12-actions-oidc-tokens-now-support-repository-custom-properties/",
-      "description": "Mar 12, 2026 · GitHub Actions OpenID Connect (OIDC) tokens now support repository custom properties as claims. Additionally, a new …",
+      "title": "File Your Weekly Claim | Iowa Workforce Development",
+      "url": "https://workforce.iowa.gov/unemployment/weekly-claim",
+      "description": "You must file a claim on iowaworks.gov each week that you wish to receive unemployment benefits. During this process, you must confirm that you are still eligible – in other words, that you are totally or …",
       "source": "DuckDuckGo",
       "query": "\"claim\" token github commit",
-      "timestamp": "2026-03-21T20:15:34.839924",
+      "timestamp": "2026-03-21T21:16:17.225334",
       "strategy": "Search Result",
       "quantity": "Unknown",
       "end_date": "Unknown",
-      "relevance_score": 2,
+      "relevance_score": 1,
       "matched_keywords": [
-        "github",
-        "repo"
+        "dev"
       ],
       "is_suspicious": false
     }
