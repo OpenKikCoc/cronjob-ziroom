@@ -1,38 +1,37 @@
 {
-  "timestamp": "2026-03-23T20:29:09.148473",
+  "timestamp": "2026-03-23T21:27:31.548842",
   "items": [
     {
-      "title": "OpenClaw Devs Targeted in GitHub Phishing Scam Promising $5K Airdr…",
-      "url": "https://www.cryptotimes.io/2026/03/19/openclaw-devs-targeted-in-github-phishing-scam-promising-5k-airdrop/",
-      "description": "4 days ago · OpenClaw developers are targeted in a GitHub phishing scam promising users $5K in $CLAW tokens airdrop to drain wallets.",
+      "title": "DevDrops - ETHGlobal",
+      "url": "https://ethglobal.com/showcase/devdrops-frgpv",
+      "description": "DevDrop revolutionizes contributor rewards with AI-driven evaluation, ensuring fair token distribution based on GitHub …",
       "source": "DuckDuckGo",
-      "query": "\"airdrop\" github contributors",
-      "timestamp": "2026-03-23T20:29:04.742715",
+      "query": "\"devdrop\" crypto",
+      "timestamp": "2026-03-23T21:27:29.566112",
       "strategy": "Search Result",
       "quantity": "Unknown",
       "end_date": "Unknown",
       "relevance_score": 3,
       "matched_keywords": [
         "github",
-        "developer",
-        "dev"
+        "dev",
+        "contributor"
       ],
       "is_suspicious": false
     },
     {
-      "title": "OpenClaw's Crypto Nightmare Just Got Worse",
-      "url": "https://beincrypto.com/openclaw-creator-warns-of-crypto-phishing-wave/",
-      "description": "4 days ago · The emails reference the “OpenClaw GitHub Contributors Airdrop” from accounts such as “ClawFunding” and “ClawReward.” Each …",
+      "title": "Mode | DevDrop 1",
+      "url": "https://www.mode.network/devdrop",
+      "description": "Launch your Dapps / L3s on Mode and compete for rewards. Mode DevDrop 1 is a competition between Dapps to drive …",
       "source": "DuckDuckGo",
-      "query": "\"airdrop\" github contributors",
-      "timestamp": "2026-03-23T20:29:04.742725",
+      "query": "\"devdrop\" crypto",
+      "timestamp": "2026-03-23T21:27:29.566122",
       "strategy": "Search Result",
       "quantity": "Unknown",
       "end_date": "Unknown",
-      "relevance_score": 2,
+      "relevance_score": 1,
       "matched_keywords": [
-        "github",
-        "contributor"
+        "dev"
       ],
       "is_suspicious": false
     }
