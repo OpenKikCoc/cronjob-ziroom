@@ -1,4 +1,22 @@
 {
-  "timestamp": "2026-03-22T07:32:35.450838",
-  "items": []
+  "timestamp": "2026-03-23T07:56:23.324813",
+  "items": [
+    {
+      "title": "amazon web services - Github Actions OIDC - Stack Overflow",
+      "url": "https://stackoverflow.com/questions/76784270/github-actions-oidc-what-are-all-the-possible-values-of-the-sub-claim-on-the",
+      "description": "Jul 28, 2023 · After some permissions errors with the aws-actions/amazon-ecr-login, I finally realized - after stumbling upon this answer - that I had configured the sub claim in the AWS Trust Policy wrong.",
+      "source": "DuckDuckGo",
+      "query": "\"claim\" token github commit",
+      "timestamp": "2026-03-23T07:56:20.508088",
+      "strategy": "Search Result",
+      "quantity": "Unknown",
+      "end_date": "Unknown",
+      "relevance_score": 2,
+      "matched_keywords": [
+        "github",
+        "stack"
+      ],
+      "is_suspicious": false
+    }
+  ]
 }
