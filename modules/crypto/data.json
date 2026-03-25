@@ -1,39 +1,4 @@
 {
-  "timestamp": "2026-03-24T23:22:48.168116",
-  "items": [
-    {
-      "title": "OpenClaw's Crypto Nightmare Just Got Worse",
-      "url": "https://beincrypto.com/openclaw-creator-warns-of-crypto-phishing-wave/",
-      "description": "5 days ago · The emails reference the “OpenClaw GitHub Contributors Airdrop” from accounts such as “ClawFunding” and “ClawReward.” Each …",
-      "source": "DuckDuckGo",
-      "query": "\"airdrop\" github contributors",
-      "timestamp": "2026-03-24T23:22:43.736140",
-      "strategy": "Search Result",
-      "quantity": "Unknown",
-      "end_date": "Unknown",
-      "relevance_score": 2,
-      "matched_keywords": [
-        "github",
-        "contributor"
-      ],
-      "is_suspicious": false
-    },
-    {
-      "title": "amazon web services - Github Actions OIDC - Stack Overflow",
-      "url": "https://stackoverflow.com/questions/76784270/github-actions-oidc-what-are-all-the-possible-values-of-the-sub-claim-on-the",
-      "description": "Jul 28, 2023 · After some permissions errors with the aws-actions/amazon-ecr-login, I finally realized - after stumbling upon this answer - that I had configured the sub claim in the AWS Trust Policy wrong.",
-      "source": "DuckDuckGo",
-      "query": "\"claim\" token github commit",
-      "timestamp": "2026-03-24T23:22:44.910206",
-      "strategy": "Search Result",
-      "quantity": "Unknown",
-      "end_date": "Unknown",
-      "relevance_score": 2,
-      "matched_keywords": [
-        "github",
-        "stack"
-      ],
-      "is_suspicious": false
-    }
-  ]
+  "timestamp": "2026-03-25T01:15:29.186302",
+  "items": []
 }
