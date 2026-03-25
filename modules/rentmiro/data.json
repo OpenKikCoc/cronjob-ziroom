@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-03-25T01:59:10.711737",
+  "timestamp": "2026-03-25T14:56:39.492023",
   "url": "https://sightmap.com/app/api/v1/yjp2k0q9pxl/sightmaps/23140",
-  "total_units": 47,
+  "total_units": 49,
   "units": [
     {
       "unit_number": "E404",
@@ -44,6 +44,21 @@
       "floor_plan_image": "https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/b0/d3/b0d3964a341b6982be09604de32b2a61.jpg",
       "floor": "62123",
       "price_change": 0
+    },
+    {
+      "unit_number": "E1213",
+      "display_unit": "HOME E1213",
+      "area": 641,
+      "price": 3422,
+      "display_price": "$3,422.00",
+      "available_on": "2026-05-31",
+      "floor_plan": "S5",
+      "beds": 0,
+      "baths": 1,
+      "floor_plan_image": "https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/83/22/83221440cbe4d1108125407ffe905aba.jpg",
+      "floor": "62123",
+      "price_change": 0,
+      "is_new": true
     },
     {
       "unit_number": "E1312",
@@ -184,6 +199,21 @@
       "floor_plan_image": "https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/40/fc/40fcfbc589292b298eb1044a5b8e4bb2.jpg",
       "floor": "62142",
       "price_change": 0
+    },
+    {
+      "unit_number": "W1108",
+      "display_unit": "HOME W1108",
+      "area": 857,
+      "price": 3709,
+      "display_price": "$3,709.00",
+      "available_on": "2026-06-07",
+      "floor_plan": "A11",
+      "beds": 1,
+      "baths": 1,
+      "floor_plan_image": "https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/e3/f9/e3f90aa00d0a9c105795ab41d646922d.jpg",
+      "floor": "62122",
+      "price_change": 0,
+      "is_new": true
     },
     {
       "unit_number": "E2011",
@@ -438,6 +468,20 @@
       "price_change": 0
     },
     {
+      "unit_number": "E1307",
+      "display_unit": "HOME E1307",
+      "area": 1120,
+      "price": 5390,
+      "display_price": "$5,390.00",
+      "available_on": "2026-03-25",
+      "floor_plan": "B3",
+      "beds": 2,
+      "baths": 2,
+      "floor_plan_image": "https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/6b/42/6b42321bc1feed6134fd7aaad72c85f7.jpg",
+      "floor": "62124",
+      "price_change": -91
+    },
+    {
       "unit_number": "W1313",
       "display_unit": "HOME W1313",
       "area": 1210,
@@ -463,20 +507,6 @@
       "baths": 2,
       "floor_plan_image": "https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/bb/61/bb61c51e7b612faff39b6173d63d71f4.jpg",
       "floor": "62125",
-      "price_change": 0
-    },
-    {
-      "unit_number": "E1307",
-      "display_unit": "HOME E1307",
-      "area": 1120,
-      "price": 5481,
-      "display_price": "$5,481.00",
-      "available_on": "2026-03-25",
-      "floor_plan": "B3",
-      "beds": 2,
-      "baths": 2,
-      "floor_plan_image": "https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/6b/42/6b42321bc1feed6134fd7aaad72c85f7.jpg",
-      "floor": "62124",
       "price_change": 0
     },
     {
