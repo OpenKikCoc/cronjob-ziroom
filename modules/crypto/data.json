@@ -1,23 +1,4 @@
 {
-  "timestamp": "2026-03-27T20:27:28.405171",
-  "items": [
-    {
-      "title": "Phishing Attack Targets OpenClaw Developers Through Fake Token Airdrop",
-      "url": "https://crypto.jobs/news/phishing-attack-targets-openclaw-developers-through-fake-token-airdrop",
-      "description": "Mar 19, 2026 · The phishing operation leveraged falsified GitHub posts to distribute information about a non-existent \"CLAW\" token airdrop. Attackers impersonated legitimate project communications to …",
-      "source": "DuckDuckGo",
-      "query": "\"airdrop\" github contributors",
-      "timestamp": "2026-03-27T20:27:24.220092",
-      "strategy": "Search Result",
-      "quantity": "Unknown",
-      "end_date": "Unknown",
-      "relevance_score": 3,
-      "matched_keywords": [
-        "github",
-        "developer",
-        "dev"
-      ],
-      "is_suspicious": false
-    }
-  ]
+  "timestamp": "2026-03-27T21:25:56.697138",
+  "items": []
 }
