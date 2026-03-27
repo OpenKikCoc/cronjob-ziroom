@@ -1,22 +1,21 @@
 {
-  "timestamp": "2026-03-27T12:40:47.288296",
+  "timestamp": "2026-03-27T14:04:46.966119",
   "items": [
     {
-      "title": "OpenClaw Devs Hit by Fake ‘CLAW’ Airdrop Scam as Hackers Target AI ...",
-      "url": "https://www.coinlive.com/news/openclaw-devs-hit-by-fake-claw-airdrop-scam-as-hackers",
-      "description": "Mar 18, 2026 · Attackers created fraudulent GitHub accounts and posted messages in repositories they controlled, tagging OpenClaw contributors to maximize visibility and credibility. ⚠️Crypto phishing …",
+      "title": "Phishing Attack Targets OpenClaw Developers Through Fake Token Airdrop",
+      "url": "https://crypto.jobs/news/phishing-attack-targets-openclaw-developers-through-fake-token-airdrop",
+      "description": "Mar 19, 2026 · The phishing operation leveraged falsified GitHub posts to distribute information about a non-existent \"CLAW\" token airdrop. Attackers impersonated legitimate project communications to trick …",
       "source": "DuckDuckGo",
       "query": "\"airdrop\" github contributors",
-      "timestamp": "2026-03-27T12:40:43.282982",
+      "timestamp": "2026-03-27T14:04:42.589393",
       "strategy": "Search Result",
       "quantity": "Unknown",
       "end_date": "Unknown",
-      "relevance_score": 4,
+      "relevance_score": 3,
       "matched_keywords": [
         "github",
-        "dev",
-        "repo",
-        "contributor"
+        "developer",
+        "dev"
       ],
       "is_suspicious": false
     }
