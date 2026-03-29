@@ -1,4 +1,41 @@
 {
-  "timestamp": "2026-03-29T09:27:42.022616",
-  "items": []
+  "timestamp": "2026-03-29T10:23:04.912845",
+  "items": [
+    {
+      "title": "DevDrops - ETHGlobal",
+      "url": "https://ethglobal.com/showcase/devdrops-frgpv",
+      "description": "DevDrop revolutionizes contributor rewards with AI-driven evaluation, ensuring fair token distribution based on GitHub contributions. Using Ethereum smart contracts and Merkle trees, it guarantees …",
+      "source": "DuckDuckGo",
+      "query": "\"devdrop\" crypto",
+      "timestamp": "2026-03-29T10:23:02.975942",
+      "strategy": "Search Result",
+      "quantity": "Unknown",
+      "end_date": "Unknown",
+      "relevance_score": 4,
+      "matched_keywords": [
+        "github",
+        "dev",
+        "contract",
+        "contributor"
+      ],
+      "is_suspicious": false
+    },
+    {
+      "title": "Mode Initiates DevDrop Distribution, Allocates ‘Mode ... - P2E Game",
+      "url": "https://www.p2e.game/dailyNews/4uzpt5072wqm",
+      "description": "For this initiative, Mode has reserved 5% of the total token supply. Future plans include developer-focused strategies and the allocation of additional supply. Over the first month, Mode’s DevDrop …",
+      "source": "DuckDuckGo",
+      "query": "\"devdrop\" crypto",
+      "timestamp": "2026-03-29T10:23:02.975950",
+      "strategy": "Search Result",
+      "quantity": "Unknown",
+      "end_date": "Unknown",
+      "relevance_score": 2,
+      "matched_keywords": [
+        "developer",
+        "dev"
+      ],
+      "is_suspicious": false
+    }
+  ]
 }
