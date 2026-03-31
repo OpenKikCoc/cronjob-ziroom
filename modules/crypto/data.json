@@ -1,21 +1,4 @@
 {
-  "timestamp": "2026-03-31T12:54:09.381171",
-  "items": [
-    {
-      "title": "Claim Search Page",
-      "url": "https://minnesota.findyourunclaimedproperty.com/app/claim-search",
-      "description": "To narrow your search results, enter a city or zip code. Select the property (ies) you wish to claim. Initiate a new search for the property reported under a different name but may be owed to you. Try …",
-      "source": "DuckDuckGo",
-      "query": "\"claim\" token github commit",
-      "timestamp": "2026-03-31T12:54:06.268605",
-      "strategy": "Search Result",
-      "quantity": "Unknown",
-      "end_date": "Unknown",
-      "relevance_score": 1,
-      "matched_keywords": [
-        "repo"
-      ],
-      "is_suspicious": false
-    }
-  ]
+  "timestamp": "2026-03-31T14:23:14.918819",
+  "items": []
 }
