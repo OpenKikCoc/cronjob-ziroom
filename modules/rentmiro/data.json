@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-31T22:32:08.293156",
+  "timestamp": "2026-03-31T23:32:22.883368",
   "url": "https://sightmap.com/app/api/v1/yjp2k0q9pxl/sightmaps/23140",
   "total_units": 49,
   "units": [
@@ -127,8 +127,7 @@
       "baths": 1,
       "floor_plan_image": "https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/13/b3/13b373f52d2350dece81457350fb1a34.jpg",
       "floor": "62144",
-      "price_change": 0,
-      "is_new": true
+      "price_change": 0
     },
     {
       "unit_number": "E1412",
