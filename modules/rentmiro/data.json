@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-04-01T13:16:19.635613",
+  "timestamp": "2026-04-01T17:47:52.398539",
   "url": "https://sightmap.com/app/api/v1/yjp2k0q9pxl/sightmaps/23140",
-  "total_units": 46,
+  "total_units": 49,
   "units": [
     {
       "unit_number": "E405",
@@ -16,6 +16,21 @@
       "floor_plan_image": "https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/b0/d3/b0d3964a341b6982be09604de32b2a61.jpg",
       "floor": "62140",
       "price_change": 0
+    },
+    {
+      "unit_number": "E1105",
+      "display_unit": "HOME E1105",
+      "area": 661,
+      "price": 3282,
+      "display_price": "$3,282.00",
+      "available_on": "2026-05-17",
+      "floor_plan": "S7",
+      "beds": 0,
+      "baths": 1,
+      "floor_plan_image": "https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/b0/d3/b0d3964a341b6982be09604de32b2a61.jpg",
+      "floor": "62122",
+      "price_change": 0,
+      "is_new": true
     },
     {
       "unit_number": "E804",
@@ -228,6 +243,21 @@
       "price_change": 0
     },
     {
+      "unit_number": "W1112",
+      "display_unit": "HOME W1112",
+      "area": 770,
+      "price": 3809,
+      "display_price": "$3,809.00",
+      "available_on": "2026-05-12",
+      "floor_plan": "A4",
+      "beds": 1,
+      "baths": 1,
+      "floor_plan_image": "https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/68/3f/683fb96a7f8638a61f6ac1562767fc51.jpg",
+      "floor": "62122",
+      "price_change": 0,
+      "is_new": true
+    },
+    {
       "unit_number": "W1306",
       "display_unit": "HOME W1306",
       "area": 791,
@@ -408,6 +438,21 @@
       "floor_plan_image": "https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/6b/42/6b42321bc1feed6134fd7aaad72c85f7.jpg",
       "floor": "62124",
       "price_change": 0
+    },
+    {
+      "unit_number": "W302",
+      "display_unit": "HOME W302",
+      "area": 1242,
+      "price": 5185,
+      "display_price": "$5,185.00",
+      "available_on": "2026-04-01",
+      "floor_plan": "B2",
+      "beds": 2,
+      "baths": 2,
+      "floor_plan_image": "https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/f2/15/f215bd1762cdeac8c86009a2d04273f7.jpg",
+      "floor": "62139",
+      "price_change": 0,
+      "is_new": true
     },
     {
       "unit_number": "W2207",
