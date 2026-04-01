@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-04-01T05:22:12.210060",
+  "timestamp": "2026-04-01T13:16:19.635613",
   "url": "https://sightmap.com/app/api/v1/yjp2k0q9pxl/sightmaps/23140",
-  "total_units": 47,
+  "total_units": 46,
   "units": [
     {
       "unit_number": "E405",
@@ -337,20 +337,6 @@
       "baths": 1,
       "floor_plan_image": "https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/68/3f/683fb96a7f8638a61f6ac1562767fc51.jpg",
       "floor": "62131",
-      "price_change": 0
-    },
-    {
-      "unit_number": "E1714",
-      "display_unit": "HOME E1714",
-      "area": 743,
-      "price": 4099,
-      "display_price": "$4,099.00",
-      "available_on": "2026-04-03",
-      "floor_plan": "A5",
-      "beds": 1,
-      "baths": 1,
-      "floor_plan_image": "https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/54/d9/54d9e364fcea2e2de624085b37eef025.jpeg",
-      "floor": "62128",
       "price_change": 0
     },
     {
