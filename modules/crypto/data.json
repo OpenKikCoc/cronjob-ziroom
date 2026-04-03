@@ -1,38 +1,37 @@
 {
-  "timestamp": "2026-04-03T19:32:25.893736",
+  "timestamp": "2026-04-03T20:25:46.181111",
   "items": [
     {
-      "title": "DevDrops - ETHGlobal",
-      "url": "https://ethglobal.com/showcase/devdrops-frgpv",
-      "description": "DevDrop revolutionizes contributor rewards with AI-driven evaluation, ensuring fair token distribution based on GitHub contributions. Using Ethereum smart contracts and Merkle trees, it guarantees …",
+      "title": "amazon web services - Github Actions OIDC - Stack Overflow",
+      "url": "https://stackoverflow.com/questions/76784270/github-actions-oidc-what-are-all-the-possible-values-of-the-sub-claim-on-the",
+      "description": "Jul 28, 2023 · After some permissions errors with the aws-actions/amazon-ecr-login, I finally realized - after stumbling upon this answer - that I had configured the sub claim in the AWS Trust Policy wrong.",
       "source": "DuckDuckGo",
-      "query": "\"devdrop\" crypto",
-      "timestamp": "2026-04-03T19:32:23.887685",
+      "query": "\"claim\" token github commit",
+      "timestamp": "2026-04-03T20:25:42.958576",
       "strategy": "Search Result",
       "quantity": "Unknown",
       "end_date": "Unknown",
-      "relevance_score": 4,
+      "relevance_score": 2,
       "matched_keywords": [
         "github",
-        "dev",
-        "contract",
-        "contributor"
+        "stack"
       ],
       "is_suspicious": false
     },
     {
-      "title": "Mode | DevDrop 1",
-      "url": "https://www.mode.network/devdrop",
-      "description": "Launch your Dapps / L3s on Mode and compete for rewards. Mode DevDrop 1 is a competition between Dapps to drive impact to Mode Network. In return, successful dapps will share up to 5% of the token …",
+      "title": "Claim by Commit — headless.ly",
+      "url": "https://blog.headless.ly/blog/claim-by-commit",
+      "description": "When the human decides the agent has done something worth keeping, the human commits a GitHub workflow file with a claim token. Git authenticates who pushed. The commit IS the identity. …",
       "source": "DuckDuckGo",
-      "query": "\"devdrop\" crypto",
-      "timestamp": "2026-04-03T19:32:23.887673",
+      "query": "\"claim\" token github commit",
+      "timestamp": "2026-04-03T20:25:42.958587",
       "strategy": "Search Result",
       "quantity": "Unknown",
       "end_date": "Unknown",
-      "relevance_score": 1,
+      "relevance_score": 2,
       "matched_keywords": [
-        "dev"
+        "github",
+        "commit"
       ],
       "is_suspicious": false
     }
