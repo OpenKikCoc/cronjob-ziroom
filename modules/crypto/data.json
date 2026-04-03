@@ -1,23 +1,4 @@
 {
-  "timestamp": "2026-04-03T15:33:14.870174",
-  "items": [
-    {
-      "title": "OpenClaw Devs Targeted in GitHub Phishing Scam Promising $5K Airdrop",
-      "url": "https://www.cryptotimes.io/2026/03/19/openclaw-devs-targeted-in-github-phishing-scam-promising-5k-airdrop/",
-      "description": "Mar 19, 2026 · In this novel method, attackers spun up throwaway GitHub accounts and open issue threads in their own repositories, mass-tagging dozens of users. It especially targeted those who …",
-      "source": "DuckDuckGo",
-      "query": "\"airdrop\" github contributors",
-      "timestamp": "2026-04-03T15:33:10.490803",
-      "strategy": "Search Result",
-      "quantity": "Unknown",
-      "end_date": "Unknown",
-      "relevance_score": 3,
-      "matched_keywords": [
-        "github",
-        "dev",
-        "repo"
-      ],
-      "is_suspicious": false
-    }
-  ]
+  "timestamp": "2026-04-03T16:29:25.776270",
+  "items": []
 }
