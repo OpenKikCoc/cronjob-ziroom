@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-04-03T10:35:05.741045",
+  "timestamp": "2026-04-03T11:31:23.514813",
   "items": [
     {
-      "title": "Likely Crypto Airdrop Scam Targeting GitHub Contributors (OpenClaw ...",
-      "url": "https://news.ycombinator.com/item?id=47425248",
-      "description": "Mar 18, 2026 · I also got this message, but instead directly on github. Presumably a scam. Seems to be sending this message to …",
+      "title": "Claim by Commit — headless.ly",
+      "url": "https://blog.headless.ly/blog/claim-by-commit",
+      "description": "When the human decides the agent has done something worth keeping, the human commits a GitHub workflow file with a …",
       "source": "DuckDuckGo",
-      "query": "\"airdrop\" github contributors",
-      "timestamp": "2026-04-03T10:35:01.402135",
+      "query": "\"claim\" token github commit",
+      "timestamp": "2026-04-03T11:31:20.265276",
       "strategy": "Search Result",
       "quantity": "Unknown",
       "end_date": "Unknown",
       "relevance_score": 2,
       "matched_keywords": [
         "github",
-        "contributor"
+        "commit"
       ],
       "is_suspicious": false
     }
