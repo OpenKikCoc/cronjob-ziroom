@@ -1,13 +1,13 @@
 {
-  "timestamp": "2026-04-03T07:56:13.264593",
+  "timestamp": "2026-04-03T08:43:31.112185",
   "items": [
     {
-      "title": "OpenClaw Devs Targeted in GitHub Phishing Scam Promising $5K Airdrop",
-      "url": "https://www.cryptotimes.io/2026/03/19/openclaw-devs-targeted-in-github-phishing-scam-promising-5k-airdrop/",
-      "description": "Mar 19, 2026 · In this novel method, attackers spun up throwaway GitHub accounts and open issue threads in their own repositories, mass-tagging dozens of users. It especially targeted those who …",
+      "title": "DevDrops - ETHGlobal",
+      "url": "https://ethglobal.com/showcase/devdrops-frgpv",
+      "description": "DevDrop revolutionizes contributor rewards with AI-driven evaluation, ensuring fair token distribution based on GitHub …",
       "source": "DuckDuckGo",
-      "query": "\"airdrop\" github contributors",
-      "timestamp": "2026-04-03T07:56:08.847406",
+      "query": "\"devdrop\" crypto",
+      "timestamp": "2026-04-03T08:43:29.212964",
       "strategy": "Search Result",
       "quantity": "Unknown",
       "end_date": "Unknown",
@@ -15,25 +15,23 @@
       "matched_keywords": [
         "github",
         "dev",
-        "repo"
+        "contributor"
       ],
       "is_suspicious": false
     },
     {
-      "title": "Likely Crypto Airdrop Scam Targeting GitHub Contributors …",
-      "url": "https://news.ycombinator.com/item?id=47425248",
-      "description": "Mar 18, 2026 · I also got this message, but instead directly on github. Presumably a scam. Seems to be sending this message to everyone who has the openclaw repo starred.",
+      "title": "Mode | DevDrop 1",
+      "url": "https://www.mode.network/devdrop",
+      "description": "Launch your Dapps / L3s on Mode and compete for rewards. Mode DevDrop 1 is a competition between Dapps to drive …",
       "source": "DuckDuckGo",
-      "query": "\"airdrop\" github contributors",
-      "timestamp": "2026-04-03T07:56:08.847415",
+      "query": "\"devdrop\" crypto",
+      "timestamp": "2026-04-03T08:43:29.212973",
       "strategy": "Search Result",
       "quantity": "Unknown",
       "end_date": "Unknown",
-      "relevance_score": 3,
+      "relevance_score": 1,
       "matched_keywords": [
-        "github",
-        "repo",
-        "contributor"
+        "dev"
       ],
       "is_suspicious": false
     }
