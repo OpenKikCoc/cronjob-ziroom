@@ -1,22 +1,4 @@
 {
-  "timestamp": "2026-04-05T23:24:24.796947",
-  "items": [
-    {
-      "title": "Likely Crypto Airdrop Scam Targeting GitHub Contributors",
-      "url": "https://news.ycombinator.com/item?id=47425248",
-      "description": "Mar 18, 2026 · I also got this message, but instead directly on github. Presumably a scam. Seems to be sending this message …",
-      "source": "DuckDuckGo",
-      "query": "\"airdrop\" github contributors",
-      "timestamp": "2026-04-05T23:24:19.932501",
-      "strategy": "Search Result",
-      "quantity": "Unknown",
-      "end_date": "Unknown",
-      "relevance_score": 2,
-      "matched_keywords": [
-        "github",
-        "contributor"
-      ],
-      "is_suspicious": false
-    }
-  ]
+  "timestamp": "2026-04-06T01:25:19.656655",
+  "items": []
 }
