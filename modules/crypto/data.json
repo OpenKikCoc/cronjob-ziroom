@@ -1,23 +1,4 @@
 {
-  "timestamp": "2026-04-07T16:04:45.362903",
-  "items": [
-    {
-      "title": "Likely Crypto Airdrop Scam Targeting GitHub Contributors …",
-      "url": "https://news.ycombinator.com/item?id=47425248",
-      "description": "Mar 18, 2026 · I also got this message, but instead directly on github. Presumably a scam. Seems to be sending this message to everyone who has the openclaw repo starred.",
-      "source": "DuckDuckGo",
-      "query": "\"airdrop\" github contributors",
-      "timestamp": "2026-04-07T16:04:41.639239",
-      "strategy": "Search Result",
-      "quantity": "Unknown",
-      "end_date": "Unknown",
-      "relevance_score": 3,
-      "matched_keywords": [
-        "github",
-        "repo",
-        "contributor"
-      ],
-      "is_suspicious": false
-    }
-  ]
+  "timestamp": "2026-04-07T17:50:10.548620",
+  "items": []
 }
