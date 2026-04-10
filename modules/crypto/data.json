@@ -1,19 +1,38 @@
 {
-  "timestamp": "2026-04-10T14:11:55.205270",
+  "timestamp": "2026-04-10T15:41:20.592108",
   "items": [
     {
-      "title": "File or Track a Claim | Allstate Insurance",
-      "url": "https://www.allstate.com/claims/file-track",
-      "description": "Report a claim or view your claim’s progress online via My Account or the Allstate® mobile app. Experience quick and easy claim service with Allstate.",
+      "title": "DevDrops - ETHGlobal",
+      "url": "https://ethglobal.com/showcase/devdrops-frgpv",
+      "description": "DevDrop revolutionizes contributor rewards with AI-driven evaluation, ensuring fair token distribution based on GitHub contributions. …",
       "source": "DuckDuckGo",
-      "query": "\"claim\" token github commit",
-      "timestamp": "2026-04-10T14:11:22.470029",
+      "query": "\"devdrop\" crypto",
+      "timestamp": "2026-04-10T15:41:18.751019",
       "strategy": "Search Result",
       "quantity": "Unknown",
       "end_date": "Unknown",
-      "relevance_score": 1,
+      "relevance_score": 3,
       "matched_keywords": [
-        "repo"
+        "github",
+        "dev",
+        "contributor"
+      ],
+      "is_suspicious": false
+    },
+    {
+      "title": "Mode Initiates DevDrop Distribution, Allocates ‘Mode ... - P2E Game",
+      "url": "https://www.p2e.game/dailyNews/4uzpt5072wqm",
+      "description": "For this initiative, Mode has reserved 5% of the total token supply. Future plans include developer-focused strategies and the …",
+      "source": "DuckDuckGo",
+      "query": "\"devdrop\" crypto",
+      "timestamp": "2026-04-10T15:41:18.751029",
+      "strategy": "Search Result",
+      "quantity": "Unknown",
+      "end_date": "Unknown",
+      "relevance_score": 2,
+      "matched_keywords": [
+        "developer",
+        "dev"
       ],
       "is_suspicious": false
     }
