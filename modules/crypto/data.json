@@ -1,31 +1,32 @@
 {
-  "timestamp": "2026-04-10T15:41:20.592108",
+  "timestamp": "2026-04-10T16:40:02.897050",
   "items": [
     {
       "title": "DevDrops - ETHGlobal",
       "url": "https://ethglobal.com/showcase/devdrops-frgpv",
-      "description": "DevDrop revolutionizes contributor rewards with AI-driven evaluation, ensuring fair token distribution based on GitHub contributions. …",
+      "description": "DevDrop revolutionizes contributor rewards with AI-driven evaluation, ensuring fair token distribution based on GitHub contributions. Using Ethereum smart contracts and Merkle trees, it guarantees secure, …",
       "source": "DuckDuckGo",
       "query": "\"devdrop\" crypto",
-      "timestamp": "2026-04-10T15:41:18.751019",
+      "timestamp": "2026-04-10T16:40:01.495762",
       "strategy": "Search Result",
       "quantity": "Unknown",
       "end_date": "Unknown",
-      "relevance_score": 3,
+      "relevance_score": 4,
       "matched_keywords": [
         "github",
         "dev",
+        "contract",
         "contributor"
       ],
       "is_suspicious": false
     },
     {
-      "title": "Mode Initiates DevDrop Distribution, Allocates ‘Mode ... - P2E Game",
-      "url": "https://www.p2e.game/dailyNews/4uzpt5072wqm",
-      "description": "For this initiative, Mode has reserved 5% of the total token supply. Future plans include developer-focused strategies and the …",
+      "title": "Calling all developers! Participate in Mode DevDrop 1 to earn your ...",
+      "url": "https://medium.com/@shelleymae/calling-all-developers-participate-in-mode-devdrop-1-to-earn-your-share-of-500-million-mode-tokens-4c579d1eaccf",
+      "description": "Feb 27, 2024 · Earn rewards: You can compete for a share of up to 500 million MODE tokens (about 5% of the total supply)! Get noticed: Your project will be seen by over 130,000 existing Mode users and …",
       "source": "DuckDuckGo",
       "query": "\"devdrop\" crypto",
-      "timestamp": "2026-04-10T15:41:18.751029",
+      "timestamp": "2026-04-10T16:40:01.495771",
       "strategy": "Search Result",
       "quantity": "Unknown",
       "end_date": "Unknown",
