@@ -1,4 +1,41 @@
 {
-  "timestamp": "2026-04-11T05:54:00.386048",
-  "items": []
+  "timestamp": "2026-04-11T09:31:25.076654",
+  "items": [
+    {
+      "title": "DevDrops - ETHGlobal",
+      "url": "https://ethglobal.com/showcase/devdrops-frgpv",
+      "description": "DevDrop revolutionizes contributor rewards with AI-driven evaluation, ensuring fair token distribution based on GitHub contributions. Using Ethereum smart contracts and Merkle trees, it guarantees …",
+      "source": "DuckDuckGo",
+      "query": "\"devdrop\" crypto",
+      "timestamp": "2026-04-11T09:31:23.507866",
+      "strategy": "Search Result",
+      "quantity": "Unknown",
+      "end_date": "Unknown",
+      "relevance_score": 4,
+      "matched_keywords": [
+        "github",
+        "dev",
+        "contract",
+        "contributor"
+      ],
+      "is_suspicious": false
+    },
+    {
+      "title": "Calling all developers! Participate in Mode DevDrop 1 to earn your ...",
+      "url": "https://medium.com/@shelleymae/calling-all-developers-participate-in-mode-devdrop-1-to-earn-your-share-of-500-million-mode-tokens-4c579d1eaccf",
+      "description": "Feb 27, 2024 · Earn rewards: You can compete for a share of up to 500 million MODE tokens (about 5% of the total supply)! Get noticed: Your project will be seen by over 130,000 existing Mode users and …",
+      "source": "DuckDuckGo",
+      "query": "\"devdrop\" crypto",
+      "timestamp": "2026-04-11T09:31:23.507875",
+      "strategy": "Search Result",
+      "quantity": "Unknown",
+      "end_date": "Unknown",
+      "relevance_score": 2,
+      "matched_keywords": [
+        "developer",
+        "dev"
+      ],
+      "is_suspicious": false
+    }
+  ]
 }
