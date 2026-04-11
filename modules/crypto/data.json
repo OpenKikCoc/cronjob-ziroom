@@ -1,4 +1,40 @@
 {
-  "timestamp": "2026-04-10T21:28:04.600862",
-  "items": []
+  "timestamp": "2026-04-11T04:11:43.609444",
+  "items": [
+    {
+      "title": "DevDrops - ETHGlobal",
+      "url": "https://ethglobal.com/showcase/devdrops-frgpv",
+      "description": "DevDrop revolutionizes contributor rewards with AI-driven evaluation, ensuring fair token distribution based on GitHub …",
+      "source": "DuckDuckGo",
+      "query": "\"devdrop\" crypto",
+      "timestamp": "2026-04-11T04:11:41.552987",
+      "strategy": "Search Result",
+      "quantity": "Unknown",
+      "end_date": "Unknown",
+      "relevance_score": 3,
+      "matched_keywords": [
+        "github",
+        "dev",
+        "contributor"
+      ],
+      "is_suspicious": false
+    },
+    {
+      "title": "Mode Initiates DevDrop Distribution, Allocates ‘Mode",
+      "url": "https://www.p2e.game/dailyNews/4uzpt5072wqm",
+      "description": "For this initiative, Mode has reserved 5% of the total token supply. Future plans include developer-focused strategies and the …",
+      "source": "DuckDuckGo",
+      "query": "\"devdrop\" crypto",
+      "timestamp": "2026-04-11T04:11:41.552997",
+      "strategy": "Search Result",
+      "quantity": "Unknown",
+      "end_date": "Unknown",
+      "relevance_score": 2,
+      "matched_keywords": [
+        "developer",
+        "dev"
+      ],
+      "is_suspicious": false
+    }
+  ]
 }
