@@ -12,12 +12,12 @@ jobs:
     name: MonitorRentMiroData
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
       
       - name: Setup Python3 environment
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.10'
       
@@ -63,7 +63,7 @@ jobs:
 
       - name: Deploy to GitHub Pages
         if: ${{ steps.check-changes.outputs.hasChange == 'true' }}
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
@@ -72,7 +72,7 @@ jobs:
           user_email: 'github-actions[bot]@users.noreply.github.com'
       
       - name: Send mail
-        uses: dawidd6/action-send-mail@master
+        uses: dawidd6/action-send-mail@v16
         if: ${{ steps.check-changes.outputs.hasChange == 'true' }}
         with:
           server_address: smtp.qq.com
@@ -82,4 +82,4 @@ jobs:
           subject: 'RentMiro Data Update Notification'
           html_body: file://modules/rentmiro/data.html
           to: ${{ secrets.QQEMAIL_RECIPIENTS }}
-          from: GitHub Actions
+          from: GitHub Actions <${{ secrets.QQEMAIL_USERNAME }}>
