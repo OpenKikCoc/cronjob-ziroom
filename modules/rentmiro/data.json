@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-17T21:39:38.915361",
+  "timestamp": "2026-04-17T22:36:07.060052",
   "url": "https://sightmap.com/app/api/v1/yjp2k0q9pxl/sightmaps/23140",
   "total_units": 43,
   "units": [
@@ -141,8 +141,7 @@
       "baths": 1,
       "floor_plan_image": "https://cdn.sightmap.com/assets/n9/w6/n9w6mm0ev71/1b/74/1b7460da18d92de9b7070de0848b283a.jpg",
       "floor": "62141",
-      "price_change": 0,
-      "is_new": true
+      "price_change": 0
     },
     {
       "unit_number": "W906",
